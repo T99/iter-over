@@ -1,0 +1,45 @@
+{
+	
+	"compilerOptions": {
+		
+		// Compiles to ES6 JS.
+		"target": "es6",
+		
+		// Generates a JS --> TS source map for easier debugging.
+		"sourceMap": true,
+		
+		// Prevents the compiler from compiling down .ts files that contain errors.
+		"noEmitOnError": true,
+		
+		// Compiles to the directory above this one just to keep everything better organized.
+		"outDir": "../",
+		
+		// Forces consistent letter casing when referencing the same file.
+		"forceConsistentCasingInFileNames": true,
+		
+		// Prevents functions from conditionally not returning a value (implicitly returning undefined).
+		"noImplicitReturns": true,
+		
+		// Prevents unused imports, private functions, properties, etc.
+		"noUnusedLocals": true,
+		
+		// Prevents the use of ambiguous ('any' typed/un-typed) 'this' calls.
+		"noImplicitThis": true,
+		
+		// Prevents switch statements that do not handle every use-case.
+		"noFallthroughCasesInSwitch": true,
+		
+		// Removes comments from compiled .js files.
+		"removeComments": true,
+		
+		"noImplicitAny": true,
+		
+		"strictNullChecks": true,
+		
+		"strictPropertyInitialization": true,
+		
+		"strictFunctionTypes": true
+		
+	}
+	
+}
