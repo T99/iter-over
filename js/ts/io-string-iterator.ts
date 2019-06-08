@@ -4,16 +4,16 @@
  *	Website: dashboard.ampelfeedback.com
  */
 
-import TSAIterator from "ts-a-iterator.js";
+import IOAIterator from "./io-a-iterator.js";
 
 /**
- * A TSAIterator that iterates over the characters in a string.
+ * A IOAIterator that iterates over the characters in a string.
  *
  * @author Trevor Sears <trevorsears.main@gmail.com>
  * @version v0.1.0
  * @since v0.1.0
  */
-class TSStringIterator extends TSAIterator<string> {
+class IOStringIterator extends IOAIterator<string> {
 	
 	private content: string;
 	
@@ -54,4 +54,4 @@ class TSStringIterator extends TSAIterator<string> {
 	
 }
 
-export default TSStringIterator;
+export default IOStringIterator;

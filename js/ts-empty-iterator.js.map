@@ -1,1 +1,0 @@
-{"version":3,"file":"ts-empty-iterator.js","sourceRoot":"","sources":["ts/ts-empty-iterator.ts"],"names":[],"mappings":"AAMA,OAAO,WAAW,MAAM,kBAAkB,CAAC;AAS3C,MAAM,eAAgB,SAAQ,WAAgB;IAEtC,OAAO;QAEb,OAAO,KAAK,CAAC;IAEd,CAAC;IAEM,IAAI;QAEV,OAAO,SAAS,CAAC;IAElB,CAAC;IAEM,MAAM;QAEZ,OAAO,SAAS,CAAC;IAElB,CAAC;IAEM,KAAK;QAEX,OAAO;IAER,CAAC;CAED;AAED,eAAe,eAAe,CAAC"}

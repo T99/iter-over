@@ -1,7 +1,15 @@
-class TSAIterator {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class IOAIterator {
     forEachRemaining(callback) {
         while (this.hasNext())
             callback(this.next());
+    }
+    remove() {
+        throw new Error("ERR | #remove() operation is not supported for this implementation of IOAIterator.");
+    }
+    reset() {
+        throw new Error("ERR | #reset() operation is not supported for this implementation of IOAIterator.");
     }
     [Symbol.iterator]() {
         return new class {
@@ -20,5 +28,5 @@ class TSAIterator {
         }(this);
     }
 }
-export default TSAIterator;
-//# sourceMappingURL=ts-a-iterator.js.map
+exports.default = IOAIterator;
+//# sourceMappingURL=io-a-iterator.js.map

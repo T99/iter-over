@@ -4,7 +4,7 @@
  *	Website: dashboard.ampelfeedback.com
  */
 
-import TSAIterator from "ts-a-iterator.js";
+import IOAIterator from "./io-a-iterator.js";
 
 /**
  * An empty iterator.
@@ -13,7 +13,7 @@ import TSAIterator from "ts-a-iterator.js";
  * @version v0.1.0
  * @since v0.1.0
  */
-class TSEmptyIterator extends TSAIterator<any> {
+class IOEmptyIterator extends IOAIterator<any> {
 	
 	public hasNext(): boolean {
 		
@@ -41,4 +41,4 @@ class TSEmptyIterator extends TSAIterator<any> {
 
 }
 
-export default TSEmptyIterator;
+export default IOEmptyIterator;

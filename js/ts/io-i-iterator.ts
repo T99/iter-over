@@ -11,7 +11,7 @@
  * @version v0.1.0
  * @since v0.1.0
  */
-interface TSIIterator<T> {
+interface IOIIterator<T> {
 	
 	/**
 	 * Returns true if a call to #next() would return a meaningful result after calling this method.
@@ -21,16 +21,16 @@ interface TSIIterator<T> {
 	hasNext(): boolean;
 	
 	/**
-	 * Returns the next element this TSIIterator has to iterate over.
+	 * Returns the next element this IOIIterator has to iterate over.
 	 *
-	 * @returns {T} The next element this TSIIterator has.
+	 * @returns {T} The next element this IOIIterator has.
 	 */
 	next(): T | undefined;
 	
 	/**
-	 * Performs the specified action for all of the remaining elements in this TSIIterator.
+	 * Performs the specified action for all of the remaining elements in this IOIIterator.
 	 *
-	 * @param {(element: T) => void} callback The action to perform on the remaining elements of this TSIIterator.
+	 * @param {(element: T) => void} callback The action to perform on the remaining elements of this IOIIterator.
 	 */
 	forEachRemaining(callback: (element: T) => void): void;
 	
@@ -42,13 +42,13 @@ interface TSIIterator<T> {
 	remove?(): T | undefined;
 	
 	/**
-	 * Resets this TSIIterator back to it's initial position, readying it to iterate over the underlying collection from
+	 * Resets this IOIIterator back to it's initial position, readying it to iterate over the underlying collection from
 	 * the 'beginning' again.
 	 */
-	reset(): void;
+	reset?(): void;
 	
 	[Symbol.iterator](): IterableIterator<T | undefined>;
 	
 }
 
-export default TSIIterator;
+export default IOIIterator;

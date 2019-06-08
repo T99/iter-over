@@ -11,7 +11,7 @@
  * @version v0.1.0
  * @since v0.1.0
  */
-interface TSKeyValuePair<K = any, V = any> {
+interface IOKeyValuePair<K = any, V = any> {
 
 	readonly key: K;
 	
@@ -19,4 +19,4 @@ interface TSKeyValuePair<K = any, V = any> {
 
 }
 
-export default TSKeyValuePair;
+export default IOKeyValuePair;

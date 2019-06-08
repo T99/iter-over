@@ -4,7 +4,7 @@
  *	Website: dashboard.ampelfeedback.com
  */
 
-import TSIIterator from "ts-i-iterator.js";
+import IOIIterator from "./io-i-iterator";
 
 /**
  * A generic iterator very similar to the pattern used in Java.
@@ -13,7 +13,7 @@ import TSIIterator from "ts-i-iterator.js";
  * @version v0.1.0
  * @since v0.1.0
  */
-abstract class TSAIterator<T> implements TSIIterator<T> {
+abstract class IOAIterator<T> implements IOIIterator<T> {
 	
 	/**
 	 * Returns true if a call to #next() would return a meaningful result after calling this method.
@@ -23,20 +23,20 @@ abstract class TSAIterator<T> implements TSIIterator<T> {
 	public abstract hasNext(): boolean;
 	
 	/**
-	 * Returns the next element this TSAIterator has to iterate over.
+	 * Returns the next element this IOAIterator has to iterate over.
 	 *
-	 * @returns {T} The next element this TSAIterator has.
+	 * @returns {T} The next element this IOAIterator has.
 	 */
-	public abstract next(): T;
+	public abstract next(): T | undefined;
 	
 	/**
-	 * Performs the specified action for all of the remaining elements in this TSAIterator.
+	 * Performs the specified action for all of the remaining elements in this IOAIterator.
 	 *
-	 * @param {(element: T) => void} callback The action to perform on the remaining elements of this TSAIterator.
+	 * @param {(element: T) => void} callback The action to perform on the remaining elements of this IOAIterator.
 	 */
 	public forEachRemaining(callback: (element: T) => void): void {
 		
-		while (this.hasNext()) callback(this.next());
+		while (this.hasNext()) callback(this.next() as T);
 		
 	}
 	
@@ -45,21 +45,29 @@ abstract class TSAIterator<T> implements TSIIterator<T> {
 	 *
 	 * @returns {T} The last element returned by the #next() method.
 	 */
-	public abstract remove?(): T | undefined;
+	public remove(): T | undefined {
+		
+		throw new Error("ERR | #remove() operation is not supported for this implementation of IOAIterator.");
+		
+	}
 	
 	/**
-	 * Resets this TSAIterator back to it's initial position, readying it to iterate over the underlying collection from
+	 * Resets this IOAIterator back to it's initial position, readying it to iterate over the underlying collection from
 	 * the 'beginning' again.
 	 */
-	public abstract reset(): void;
+	public reset(): void {
+		
+		throw new Error("ERR | #reset() operation is not supported for this implementation of IOAIterator.");
+		
+	}
 	
 	public [Symbol.iterator](): IterableIterator<T | undefined> {
 		
 		return new class implements IterableIterator<T | undefined> {
 			
-			private iterator: TSAIterator<T | undefined>;
+			private iterator: IOAIterator<T | undefined>;
 			
-			public constructor(iterator: TSAIterator<T | undefined>) {
+			public constructor(iterator: IOAIterator<T | undefined>) {
 				
 				this.iterator = iterator;
 				
@@ -87,4 +95,4 @@ abstract class TSAIterator<T> implements TSIIterator<T> {
 	
 }
 
-export default TSAIterator;
+export default IOAIterator;

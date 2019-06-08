@@ -4,18 +4,18 @@
  *	Website: dashboard.ampelfeedback.com
  */
 
-import TSAIterator from "ts-a-iterator.js";
-import TSKeyValuePair from "ts-key-value-pair";
+import IOAIterator from "./io-a-iterator.js";
+import IOKeyValuePair from "./io-key-value-pair";
 
 
 /**
- * A TSAIterator that iterates over the keys of an object.
+ * A IOAIterator that iterates over the keys of an object.
  *
  * @author Trevor Sears <trevorsears.main@gmail.com>
  * @version v0.1.0
  * @since v0.1.0
  */
-class TSObjectIterator<E = any> extends TSAIterator<TSKeyValuePair<string, E>> {
+class IOObjectIterator<E = any> extends IOAIterator<IOKeyValuePair<string, E>> {
 	
 	private content: any;
 	private keys: string[];
@@ -41,7 +41,7 @@ class TSObjectIterator<E = any> extends TSAIterator<TSKeyValuePair<string, E>> {
 		
 	}
 	
-	public next(): TSKeyValuePair<string, E> {
+	public next(): IOKeyValuePair<string, E> {
 		
 		let key: string = this.keys[this.index++];
 		let value: E = this.content[key];
@@ -50,13 +50,13 @@ class TSObjectIterator<E = any> extends TSAIterator<TSKeyValuePair<string, E>> {
 		
 	}
 	
-	public remove(): TSKeyValuePair<string, E> | undefined{
+	public remove(): IOKeyValuePair<string, E> | undefined{
 		
 		if (this.index > 0) {
 			
 			let key: string = this.keys[--this.index];
 			let value: E = this.content[key];
-			let result: TSKeyValuePair<string, E> = { key, value };
+			let result: IOKeyValuePair<string, E> = { key, value };
 			
 			delete this.content[key];
 			
@@ -78,4 +78,4 @@ class TSObjectIterator<E = any> extends TSAIterator<TSKeyValuePair<string, E>> {
 	
 }
 
-export default TSObjectIterator;
+export default IOObjectIterator;

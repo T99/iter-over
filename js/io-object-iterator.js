@@ -1,5 +1,10 @@
-import TSAIterator from "ts-a-iterator.js";
-class TSObjectIterator extends TSAIterator {
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const io_a_iterator_js_1 = __importDefault(require("./io-a-iterator.js"));
+class IOObjectIterator extends io_a_iterator_js_1.default {
     constructor(content) {
         super();
         this.index = 0;
@@ -34,5 +39,5 @@ class TSObjectIterator extends TSAIterator {
         this.index = 0;
     }
 }
-export default TSObjectIterator;
-//# sourceMappingURL=ts-object-iterator.js.map
+exports.default = IOObjectIterator;
+//# sourceMappingURL=io-object-iterator.js.map
