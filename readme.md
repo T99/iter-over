@@ -46,7 +46,7 @@ for (let counterVal of counter) {
 ## Utility Classes
 There are a handful of utility classes provided with iter-over that are all ready for you to use.
 
-#### IOStringIterator
+### IOStringIterator
 IOStringIterator iterates over the characters of a provided input string.
 
 ```typescript
@@ -61,7 +61,7 @@ for (let character of iter) {
 // Prints 'H', 'e', 'l', 'l', 'o', '!'.
 ```
 
-#### IOObjectIterator
+### IOObjectIterator
 IOObjectIterator iterates over the key-value pairs of a provided input object, returning IOKeyValuePairs from `#next()`.
 
 ```typescript
@@ -108,7 +108,7 @@ for (let kvPair of iter) {
 //	'{ key: "key3", value: 42 }'
 ```
 
-#### IOEmptyIterator
+### IOEmptyIterator
 Sometimes it is semantically useful to have an empty iterator that follows the iterator pattern but will never have content.
 
 ```typescript
