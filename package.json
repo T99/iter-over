@@ -1,6 +1,6 @@
 {
   "name": "iter-over",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Sugary iteration utilities and interfaces.",
   "main": "js/",
   "types": ".d.ts/",
@@ -13,8 +13,10 @@
     "url": "git+https://github.com/T99/iter-over.git"
   },
   "keywords": [
-    "iteration",
-    "iter"
+    "iteration", "iter", "iterable", "iterator", "iterate",
+    "for in", "for-in",
+    "for of", "for-of",
+    "for each", "for-each"
   ],
   "author": "Trevor Sears <trevorsears.main@gmail.com> (http://trevorsears.io/)",
   "license": "ISC",

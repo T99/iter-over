@@ -10,7 +10,7 @@ import { IOAIterator } from "./io-a-iterator.js";
  * An empty iterator.
  *
  * @author Trevor Sears <trevorsears.main@gmail.com>
- * @version v0.1.0
+ * @version v1.0.0
  * @since v0.1.0
  */
 export class IOEmptyIterator extends IOAIterator<any> {
