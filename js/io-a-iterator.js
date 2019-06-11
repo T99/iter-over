@@ -28,5 +28,5 @@ class IOAIterator {
         }(this);
     }
 }
-exports.default = IOAIterator;
+exports.IOAIterator = IOAIterator;
 //# sourceMappingURL=io-a-iterator.js.map

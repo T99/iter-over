@@ -20,11 +20,14 @@
 		// Prevents the compiler from compiling down .ts files that contain errors.
 		"noEmitOnError": true,
 		
+		// Generate type/declaration files.
+		"declaration": true,
+		
 		// Compiles to the directory above this one just to keep everything better organized.
-		"outDir": "../",
+		"outDir": "../js/",
 		
 		// Compiles .d.ts declaration files to a directory called '.d.ts' above this directory.
-		//"declarationDir": "../.d.ts/",
+		"declarationDir": "../.d.ts/",
 		
 		// Forces consistent letter casing when referencing the same file.
 		"forceConsistentCasingInFileNames": true,

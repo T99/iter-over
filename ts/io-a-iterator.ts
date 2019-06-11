@@ -4,7 +4,7 @@
  *	Website: dashboard.ampelfeedback.com
  */
 
-import IOIIterator from "./io-i-iterator";
+import { IOIIterator } from "./io-i-iterator";
 
 /**
  * A generic iterator very similar to the pattern used in Java.
@@ -13,7 +13,7 @@ import IOIIterator from "./io-i-iterator";
  * @version v0.1.0
  * @since v0.1.0
  */
-abstract class IOAIterator<T> implements IOIIterator<T> {
+export abstract class IOAIterator<T> implements IOIIterator<T> {
 	
 	/**
 	 * Returns true if a call to #next() would return a meaningful result after calling this method.
@@ -94,5 +94,3 @@ abstract class IOAIterator<T> implements IOIIterator<T> {
 	}
 	
 }
-
-export default IOAIterator;

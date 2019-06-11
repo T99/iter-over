@@ -2,9 +2,11 @@
   "name": "iter-over",
   "version": "0.1.0",
   "description": "Sugary iteration utilities and interfaces.",
-  "main": "js",
+  "main": "js/",
+  "types": ".d.ts/",
+  "files": ["js/", ".d.ts/"],
   "scripts": {
-    "test": "node js/tests/test.js"
+    "build": "rm -rf .d.ts/ js/ && tsc -p ts/tsconfig.json"
   },
   "repository": {
     "type": "git",

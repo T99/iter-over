@@ -4,9 +4,8 @@
  *	Website: dashboard.ampelfeedback.com
  */
 
-import IOAIterator from "./io-a-iterator.js";
-import IOKeyValuePair from "./io-key-value-pair";
-
+import { IOAIterator } from "./io-a-iterator";
+import { IOKeyValuePair } from "./io-key-value-pair";
 
 /**
  * A IOAIterator that iterates over the keys of an object.
@@ -15,7 +14,7 @@ import IOKeyValuePair from "./io-key-value-pair";
  * @version v0.1.0
  * @since v0.1.0
  */
-class IOObjectIterator<E = any> extends IOAIterator<IOKeyValuePair<string, E>> {
+export class IOObjectIterator<E = any> extends IOAIterator<IOKeyValuePair<string, E>> {
 	
 	private content: any;
 	private keys: string[];
@@ -77,5 +76,3 @@ class IOObjectIterator<E = any> extends IOAIterator<IOKeyValuePair<string, E>> {
 	}
 	
 }
-
-export default IOObjectIterator;

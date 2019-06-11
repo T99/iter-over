@@ -1,10 +1,7 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const io_a_iterator_js_1 = __importDefault(require("./io-a-iterator.js"));
-class IOObjectIterator extends io_a_iterator_js_1.default {
+const io_a_iterator_1 = require("./io-a-iterator");
+class IOObjectIterator extends io_a_iterator_1.IOAIterator {
     constructor(content) {
         super();
         this.index = 0;
@@ -39,5 +36,5 @@ class IOObjectIterator extends io_a_iterator_js_1.default {
         this.index = 0;
     }
 }
-exports.default = IOObjectIterator;
+exports.IOObjectIterator = IOObjectIterator;
 //# sourceMappingURL=io-object-iterator.js.map

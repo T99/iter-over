@@ -11,7 +11,7 @@
  * @version v0.1.0
  * @since v0.1.0
  */
-interface IOIIterator<T> {
+export interface IOIIterator<T> {
 	
 	/**
 	 * Returns true if a call to #next() would return a meaningful result after calling this method.
@@ -50,5 +50,3 @@ interface IOIIterator<T> {
 	[Symbol.iterator](): IterableIterator<T | undefined>;
 	
 }
-
-export default IOIIterator;

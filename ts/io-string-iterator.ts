@@ -4,7 +4,7 @@
  *	Website: dashboard.ampelfeedback.com
  */
 
-import IOAIterator from "./io-a-iterator.js";
+import { IOAIterator } from "./io-a-iterator.js";
 
 /**
  * A IOAIterator that iterates over the characters in a string.
@@ -13,7 +13,7 @@ import IOAIterator from "./io-a-iterator.js";
  * @version v0.1.0
  * @since v0.1.0
  */
-class IOStringIterator extends IOAIterator<string> {
+export class IOStringIterator extends IOAIterator<string> {
 	
 	private content: string;
 	
@@ -53,5 +53,3 @@ class IOStringIterator extends IOAIterator<string> {
 	}
 	
 }
-
-export default IOStringIterator;
