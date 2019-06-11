@@ -1,5 +1,5 @@
-import { IOIIterator } from "./io-i-iterator";
-export declare abstract class IOAIterator<T> implements IOIIterator<T> {
+import { IIterator } from "./i-iterator";
+export declare abstract class AbstractIterator<T> implements IIterator<T> {
     abstract hasNext(): boolean;
     abstract next(): T | undefined;
     forEachRemaining(callback: (element: T) => void): void;

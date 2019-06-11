@@ -1,15 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class IOAIterator {
+class AbstractIterator {
     forEachRemaining(callback) {
         while (this.hasNext())
             callback(this.next());
     }
     remove() {
-        throw new Error("ERR | #remove() operation is not supported for this implementation of IOAIterator.");
+        throw new Error("ERR | #remove() operation is not supported for this implementation of AbstractIterator.");
     }
     reset() {
-        throw new Error("ERR | #reset() operation is not supported for this implementation of IOAIterator.");
+        throw new Error("ERR | #reset() operation is not supported for this implementation of AbstractIterator.");
     }
     [Symbol.iterator]() {
         return new class {
@@ -28,5 +28,5 @@ class IOAIterator {
         }(this);
     }
 }
-exports.IOAIterator = IOAIterator;
-//# sourceMappingURL=io-a-iterator.js.map
+exports.AbstractIterator = AbstractIterator;
+//# sourceMappingURL=abstract-iterator.js.map

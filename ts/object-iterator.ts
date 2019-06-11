@@ -4,17 +4,17 @@
  *	Website: dashboard.ampelfeedback.com
  */
 
-import { IOAIterator } from "./io-a-iterator";
-import { IOKeyValuePair } from "./io-key-value-pair";
+import { AbstractIterator } from "./abstract-iterator";
+import { KeyValuePair } from "./key-value-pair";
 
 /**
- * A IOAIterator that iterates over the keys of an object.
+ * A AbstractIterator that iterates over the keys of an object.
  *
  * @author Trevor Sears <trevorsears.main@gmail.com>
  * @version v1.0.0
  * @since v0.1.0
  */
-export class IOObjectIterator<E = any> extends IOAIterator<IOKeyValuePair<string, E>> {
+export class ObjectIterator<E = any> extends AbstractIterator<KeyValuePair<string, E>> {
 	
 	private content: any;
 	private keys: string[];
@@ -40,7 +40,7 @@ export class IOObjectIterator<E = any> extends IOAIterator<IOKeyValuePair<string
 		
 	}
 	
-	public next(): IOKeyValuePair<string, E> {
+	public next(): KeyValuePair<string, E> {
 		
 		let key: string = this.keys[this.index++];
 		let value: E = this.content[key];
@@ -49,13 +49,13 @@ export class IOObjectIterator<E = any> extends IOAIterator<IOKeyValuePair<string
 		
 	}
 	
-	public remove(): IOKeyValuePair<string, E> | undefined{
+	public remove(): KeyValuePair<string, E> | undefined {
 		
 		if (this.index > 0) {
 			
 			let key: string = this.keys[--this.index];
 			let value: E = this.content[key];
-			let result: IOKeyValuePair<string, E> = { key, value };
+			let result: KeyValuePair<string, E> = { key, value };
 			
 			delete this.content[key];
 			

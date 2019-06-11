@@ -4,7 +4,7 @@ iter-over is an iteration toolset for JavaScript/TypeScript that provides interf
 ### [Find iter-over on NPM.](https://www.npmjs.com/package/iter-over)
 
 ## Basic Usage
-For most use-cases you'll want to extend `IOAIterator` (the iter-over abstract iterator class). The abstract class implements such methods as `#forEachRemaining(callback)` and automagically implements the `[Symbol.iterator]` method so that you don't have to! The only methods you have to implement are:
+For most use-cases you'll want to extend `AbstractIterator` (the iter-over abstract iterator class). The abstract class implements such methods as `#forEachRemaining(callback)` and automagically implements the `[Symbol.iterator]` method so that you don't have to! The only methods you have to implement are:
 
 ```typescript
 public hasNext(): boolean { ... }
@@ -14,9 +14,9 @@ public next(): T | undefined { ... }
 Once you've done that, you can freely use the iterator as such:
 
 ```typescript
-import IOAIterator from "iter-over";
+import { AbstractIterator } from "iter-over";
 
-class MyCounter extends IOAIterator<number> {
+class MyCounter extends AbstractIterator<number> {
 
 	private val: number = 0;
 	
@@ -36,11 +36,7 @@ class MyCounter extends IOAIterator<number> {
 
 let counter: MyCounter = new MyCounter();
 
-for (let counterVal of counter) {
-	
-	console.log(counterVal);
-	
-}
+for (let counterVal of counter) console.log(counterVal);
 
 // ...console logs 0 through 9.
 ```
@@ -48,26 +44,22 @@ for (let counterVal of counter) {
 ## Utility Classes
 There are a handful of utility classes provided with iter-over that are all ready for you to use.
 
-### IOStringIterator
-IOStringIterator iterates over the characters of a provided input string.
+### StringIterator
+StringIterator iterates over the characters of a provided input string.
 
 ```typescript
-let iter: IOStringIterator = new IOStringIterator("Hello!");
+let iter: StringIterator = new StringIterator("Hello!");
 
-for (let character of iter) {
-	
-	console.log(character);
-	
-}
+for (let character of iter) console.log(character);
 
 // Prints 'H', 'e', 'l', 'l', 'o', '!'.
 ```
 
-### IOObjectIterator
-IOObjectIterator iterates over the key-value pairs of a provided input object, returning IOKeyValuePairs from `#next()`.
+### ObjectIterator
+ObjectIterator iterates over the key-value pairs of a provided input object, returning IOKeyValuePairs from `#next()`.
 
 ```typescript
-let iter: IOObjectIterator = new IOObjectIterator({
+let iter: ObjectIterator = new ObjectIterator({
 	key1: "value 1",
 	key2: 2,
 	key3: false,
@@ -76,11 +68,7 @@ let iter: IOObjectIterator = new IOObjectIterator({
 	}
 });
 
-for (let kvPair of iter) {
-	
-	console.log(kvPair);
-	
-}
+for (let kvPair of iter) console.log(kvPair);
 
 // Prints...
 //	'{ key: "key1", value: "value 1" }',
@@ -89,20 +77,16 @@ for (let kvPair of iter) {
 //	'{ key: "key4", value: { innerKey: "innerVal" } }'
 ```
 
-If you have more strictly-typed objects you can also pass a type to IOObjectIterator.
+If you have more strictly-typed objects you can also pass a type to ObjectIterator.
 
 ```typescript
-let iter: IOObjectIterator<number> = new IOObjectIterator<number>({
+let iter: ObjectIterator<number> = new ObjectIterator<number>({
 	key1: 0,
 	key2: 11,
 	key3: 42
 });
 
-for (let kvPair of iter) {
-	
-	console.log(kvPair);
-	
-}
+for (let kvPair of iter) console.log(kvPair);
 
 // Prints...
 //	'{ key: "key1", value: 0 }',
@@ -110,11 +94,11 @@ for (let kvPair of iter) {
 //	'{ key: "key3", value: 42 }'
 ```
 
-### IOEmptyIterator
+### EmptyIterator
 Sometimes it is semantically useful to have an empty iterator that follows the iterator pattern but will never have content.
 
 ```typescript
-let iter: IOEmptyIterator = new IOEmptyIterator();
+let iter: EmptyIterator = new EmptyIterator();
 
 console.log(iter.hasNext());
 

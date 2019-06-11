@@ -1,5 +1,5 @@
-import { IOAIterator } from "../io-a-iterator";
-declare class MyCounter extends IOAIterator<number> {
+import { AbstractIterator } from "../abstract-iterator";
+declare class MyCounter extends AbstractIterator<number> {
     private val;
     hasNext(): boolean;
     next(): number;

@@ -11,7 +11,7 @@
  * @version v1.0.0
  * @since v0.1.0
  */
-export interface IOIIterator<T> {
+export interface IIterator<T> {
 	
 	/**
 	 * Returns true if a call to #next() would return a meaningful result after calling this method.
@@ -21,16 +21,16 @@ export interface IOIIterator<T> {
 	hasNext(): boolean;
 	
 	/**
-	 * Returns the next element this IOIIterator has to iterate over.
+	 * Returns the next element this IIterator has to iterate over.
 	 *
-	 * @returns {T} The next element this IOIIterator has.
+	 * @returns {T} The next element this IIterator has.
 	 */
 	next(): T | undefined;
 	
 	/**
-	 * Performs the specified action for all of the remaining elements in this IOIIterator.
+	 * Performs the specified action for all of the remaining elements in this IIterator.
 	 *
-	 * @param {(element: T) => void} callback The action to perform on the remaining elements of this IOIIterator.
+	 * @param {(element: T) => void} callback The action to perform on the remaining elements of this IIterator.
 	 */
 	forEachRemaining(callback: (element: T) => void): void;
 	
@@ -42,7 +42,7 @@ export interface IOIIterator<T> {
 	remove?(): T | undefined;
 	
 	/**
-	 * Resets this IOIIterator back to it's initial position, readying it to iterate over the underlying collection from
+	 * Resets this IIterator back to it's initial position, readying it to iterate over the underlying collection from
 	 * the 'beginning' again.
 	 */
 	reset?(): void;

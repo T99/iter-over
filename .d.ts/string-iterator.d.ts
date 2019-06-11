@@ -1,5 +1,5 @@
-import { IOAIterator } from "./io-a-iterator.js";
-export declare class IOStringIterator extends IOAIterator<string> {
+import { AbstractIterator } from "./abstract-iterator.js";
+export declare class StringIterator extends AbstractIterator<string> {
     private content;
     private index;
     constructor(content: string);

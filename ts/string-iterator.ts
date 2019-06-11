@@ -4,16 +4,16 @@
  *	Website: dashboard.ampelfeedback.com
  */
 
-import { IOAIterator } from "./io-a-iterator.js";
+import { AbstractIterator } from "./abstract-iterator.js";
 
 /**
- * A IOAIterator that iterates over the characters in a string.
+ * A AbstractIterator that iterates over the characters in a string.
  *
  * @author Trevor Sears <trevorsears.main@gmail.com>
  * @version v1.0.0
  * @since v0.1.0
  */
-export class IOStringIterator extends IOAIterator<string> {
+export class StringIterator extends AbstractIterator<string> {
 	
 	private content: string;
 	

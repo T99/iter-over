@@ -1,4 +1,4 @@
-export interface IOIIterator<T> {
+export interface IIterator<T> {
     hasNext(): boolean;
     next(): T | undefined;
     forEachRemaining(callback: (element: T) => void): void;

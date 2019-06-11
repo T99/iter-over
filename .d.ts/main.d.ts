@@ -1,6 +1,6 @@
-export { IOAIterator } from "./io-a-iterator";
-export { IOEmptyIterator } from "./io-empty-iterator";
-export { IOIIterator } from "./io-i-iterator";
-export { IOKeyValuePair } from "./io-key-value-pair";
-export { IOObjectIterator } from "./io-object-iterator";
-export { IOStringIterator } from "./io-string-iterator";
+export { AbstractIterator } from "./abstract-iterator";
+export { EmptyIterator } from "./empty-iterator";
+export { IIterator } from "./i-iterator";
+export { KeyValuePair } from "./key-value-pair";
+export { ObjectIterator } from "./object-iterator";
+export { StringIterator } from "./string-iterator";

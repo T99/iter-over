@@ -4,7 +4,7 @@
  *	Website: dashboard.ampelfeedback.com
  */
 
-import { IOIIterator } from "./io-i-iterator";
+import { IIterator } from "./i-iterator";
 
 /**
  * A generic iterator very similar to the pattern used in Java.
@@ -13,7 +13,7 @@ import { IOIIterator } from "./io-i-iterator";
  * @version v1.0.0
  * @since v0.1.0
  */
-export abstract class IOAIterator<T> implements IOIIterator<T> {
+export abstract class AbstractIterator<T> implements IIterator<T> {
 	
 	/**
 	 * Returns true if a call to #next() would return a meaningful result after calling this method.
@@ -23,16 +23,16 @@ export abstract class IOAIterator<T> implements IOIIterator<T> {
 	public abstract hasNext(): boolean;
 	
 	/**
-	 * Returns the next element this IOAIterator has to iterate over.
+	 * Returns the next element this AbstractIterator has to iterate over.
 	 *
-	 * @returns {T} The next element this IOAIterator has.
+	 * @returns {T} The next element this AbstractIterator has.
 	 */
 	public abstract next(): T | undefined;
 	
 	/**
-	 * Performs the specified action for all of the remaining elements in this IOAIterator.
+	 * Performs the specified action for all of the remaining elements in this AbstractIterator.
 	 *
-	 * @param {(element: T) => void} callback The action to perform on the remaining elements of this IOAIterator.
+	 * @param {(element: T) => void} callback The action to perform on the remaining elements of this AbstractIterator.
 	 */
 	public forEachRemaining(callback: (element: T) => void): void {
 		
@@ -47,17 +47,17 @@ export abstract class IOAIterator<T> implements IOIIterator<T> {
 	 */
 	public remove(): T | undefined {
 		
-		throw new Error("ERR | #remove() operation is not supported for this implementation of IOAIterator.");
+		throw new Error("ERR | #remove() operation is not supported for this implementation of AbstractIterator.");
 		
 	}
 	
 	/**
-	 * Resets this IOAIterator back to it's initial position, readying it to iterate over the underlying collection from
+	 * Resets this AbstractIterator back to it's initial position, readying it to iterate over the underlying collection from
 	 * the 'beginning' again.
 	 */
 	public reset(): void {
 		
-		throw new Error("ERR | #reset() operation is not supported for this implementation of IOAIterator.");
+		throw new Error("ERR | #reset() operation is not supported for this implementation of AbstractIterator.");
 		
 	}
 	
@@ -65,9 +65,9 @@ export abstract class IOAIterator<T> implements IOIIterator<T> {
 		
 		return new class implements IterableIterator<T | undefined> {
 			
-			private iterator: IOAIterator<T | undefined>;
+			private iterator: AbstractIterator<T | undefined>;
 			
-			public constructor(iterator: IOAIterator<T | undefined>) {
+			public constructor(iterator: AbstractIterator<T | undefined>) {
 				
 				this.iterator = iterator;
 				

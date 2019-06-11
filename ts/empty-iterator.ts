@@ -4,7 +4,7 @@
  *	Website: dashboard.ampelfeedback.com
  */
 
-import { IOAIterator } from "./io-a-iterator.js";
+import { AbstractIterator } from "./abstract-iterator.js";
 
 /**
  * An empty iterator.
@@ -13,7 +13,7 @@ import { IOAIterator } from "./io-a-iterator.js";
  * @version v1.0.0
  * @since v0.1.0
  */
-export class IOEmptyIterator extends IOAIterator<any> {
+export class EmptyIterator extends AbstractIterator<any> {
 	
 	public hasNext(): boolean {
 		

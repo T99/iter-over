@@ -11,7 +11,7 @@
  * @version v1.0.0
  * @since v0.1.0
  */
-export interface IOKeyValuePair<K = any, V = any> {
+export interface KeyValuePair<K = any, V = any> {
 
 	readonly key: K;
 	

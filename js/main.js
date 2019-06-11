@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var io_a_iterator_1 = require("./io-a-iterator");
-exports.IOAIterator = io_a_iterator_1.IOAIterator;
-var io_empty_iterator_1 = require("./io-empty-iterator");
-exports.IOEmptyIterator = io_empty_iterator_1.IOEmptyIterator;
-var io_object_iterator_1 = require("./io-object-iterator");
-exports.IOObjectIterator = io_object_iterator_1.IOObjectIterator;
-var io_string_iterator_1 = require("./io-string-iterator");
-exports.IOStringIterator = io_string_iterator_1.IOStringIterator;
+var abstract_iterator_1 = require("./abstract-iterator");
+exports.AbstractIterator = abstract_iterator_1.AbstractIterator;
+var empty_iterator_1 = require("./empty-iterator");
+exports.EmptyIterator = empty_iterator_1.EmptyIterator;
+var object_iterator_1 = require("./object-iterator");
+exports.ObjectIterator = object_iterator_1.ObjectIterator;
+var string_iterator_1 = require("./string-iterator");
+exports.StringIterator = string_iterator_1.StringIterator;
 //# sourceMappingURL=main.js.map
