@@ -1,8 +1,8 @@
 {
   "name": "iter-over",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Sugary iteration utilities and interfaces.",
-  "main": "js/",
+  "main": "js/main.js",
   "types": ".d.ts/",
   "scripts": {
     "build": "rm -rf .d.ts/ js/ && tsc -p ts/tsconfig.json"
