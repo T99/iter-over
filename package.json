@@ -4,7 +4,6 @@
   "description": "Sugary iteration utilities and interfaces.",
   "main": "js/",
   "types": ".d.ts/",
-  "files": ["js/", ".d.ts/"],
   "scripts": {
     "build": "rm -rf .d.ts/ js/ && tsc -p ts/tsconfig.json"
   },
