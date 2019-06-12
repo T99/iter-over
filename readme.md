@@ -3,6 +3,12 @@ iter-over is an iteration toolset for JavaScript/TypeScript that provides interf
 
 ### [Find iter-over on NPM.](https://www.npmjs.com/package/iter-over)
 
+## Installation
+Install from NPM with
+```
+$ npm install --save iter-over
+```
+
 ## Basic Usage
 For most use-cases you'll want to extend `AbstractIterator` (the iter-over abstract iterator class). The abstract class implements such methods as `#forEachRemaining(callback)` and automagically implements the `[Symbol.iterator]` method so that you don't have to! The only methods you have to implement are:
 
