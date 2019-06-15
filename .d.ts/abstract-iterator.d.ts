@@ -5,5 +5,5 @@ export declare abstract class AbstractIterator<T> implements IIterator<T> {
     forEachRemaining(callback: (element: T) => void): void;
     remove(): T | undefined;
     reset(): void;
-    [Symbol.iterator](): IterableIterator<T | undefined>;
+    [Symbol.iterator](): IterableIterator<T>;
 }

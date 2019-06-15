@@ -20,10 +20,15 @@ class AbstractIterator {
                 return this;
             }
             next() {
-                return {
-                    done: !this.iterator.hasNext(),
-                    value: (this.iterator.hasNext() ? this.iterator.next() : undefined)
-                };
+                if (this.iterator.hasNext()) {
+                    return {
+                        done: !this.iterator.hasNext(),
+                        value: this.iterator.next()
+                    };
+                }
+                else {
+                    throw new Error("ERR | Attempted to call #next on an Iterator that returned false from #hasNext.");
+                }
             }
         }(this);
     }

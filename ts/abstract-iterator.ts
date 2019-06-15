@@ -61,32 +61,40 @@ export abstract class AbstractIterator<T> implements IIterator<T> {
 		
 	}
 	
-	public [Symbol.iterator](): IterableIterator<T | undefined> {
+	public [Symbol.iterator](): IterableIterator<T> {
 		
-		return new class implements IterableIterator<T | undefined> {
+		return new class implements IterableIterator<T> {
 			
-			private iterator: AbstractIterator<T | undefined>;
+			private iterator: AbstractIterator<T>;
 			
-			public constructor(iterator: AbstractIterator<T | undefined>) {
+			public constructor(iterator: AbstractIterator<T>) {
 				
 				this.iterator = iterator;
 				
 			}
 			
-			public [Symbol.iterator](): IterableIterator<T | undefined> {
+			public [Symbol.iterator](): IterableIterator<T> {
 				
 				return this;
 				
 			}
 			
-			public next(): IteratorResult<T | undefined> {
+			public next(): IteratorResult<T> {
 				
-				return {
+				if (this.iterator.hasNext()) {
 					
-					done: !this.iterator.hasNext(),
-					value: (this.iterator.hasNext() ? this.iterator.next() : undefined)
+					return {
+						
+						done: !this.iterator.hasNext(),
+						value: this.iterator.next() as T
+						
+					};
 					
-				};
+				} else {
+					
+					throw new Error("ERR | Attempted to call #next on an Iterator that returned false from #hasNext.");
+					
+				}
 				
 			}
 			
