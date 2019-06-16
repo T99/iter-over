@@ -67,6 +67,8 @@ export abstract class AbstractIterator<T> implements IIterator<T> {
 			
 			private iterator: AbstractIterator<T>;
 			
+			private hadFinalIteration: boolean = false;
+			
 			public constructor(iterator: AbstractIterator<T>) {
 				
 				this.iterator = iterator;
@@ -81,7 +83,9 @@ export abstract class AbstractIterator<T> implements IIterator<T> {
 			
 			public next(): IteratorResult<T> {
 				
-				if (this.iterator.hasNext()) {
+				if (!this.hadFinalIteration) {
+					
+					if (!this.iterator.hasNext()) this.hadFinalIteration = true;
 					
 					return {
 						
@@ -92,7 +96,8 @@ export abstract class AbstractIterator<T> implements IIterator<T> {
 					
 				} else {
 					
-					throw new Error("ERR | Attempted to call #next on an Iterator that returned false from #hasNext.");
+					throw new Error("ERR | Attempted to call #next on an Iterator that did not have another " +
+						"well-defined value.");
 					
 				}
 				
