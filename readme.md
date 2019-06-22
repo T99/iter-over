@@ -50,11 +50,11 @@ for (let counterVal of counter) console.log(counterVal);
 ## Utility Classes
 There are a handful of utility classes provided with iter-over that are all ready for you to use.
 
-### StringIterator
-StringIterator iterates over the characters of a provided input string.
+### StringCharacterIterator
+StringCharacterIterator iterates over the characters of a provided input string.
 
 ```typescript
-let iter: StringIterator = new StringIterator("Hello!");
+let iter: StringCharacterIterator = new StringCharacterIterator("Hello!");
 
 for (let character of iter) console.log(character);
 

@@ -1,7 +1,7 @@
 /*
  *	Created by Trevor Sears <trevorsears.main@gmail.com>.
  *	11:05 PM -- June 07th, 2019.
- *	Website: iter-over
+ *	Project: iter-over
  */
 
 import { AbstractIterator } from "../abstract-iterator";

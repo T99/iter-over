@@ -1,19 +1,19 @@
 /*
  *	Created by Trevor Sears <trevorsears.main@gmail.com>.
  *	6:16 PM -- May 18th, 2019.
- *	Website: dashboard.ampelfeedback.com
+ *	Project: iter-over
  */
 
-import { AbstractIterator } from "./abstract-iterator.js";
+import { AbstractIterator } from "./abstract-iterator";
 
 /**
- * A AbstractIterator that iterates over the characters in a string.
+ * An AbstractIterator that iterates over the characters in a string.
  *
  * @author Trevor Sears <trevorsears.main@gmail.com>
  * @version v1.0.0
  * @since v0.1.0
  */
-export class StringIterator extends AbstractIterator<string> {
+export class StringCharacterIterator extends AbstractIterator<string> {
 	
 	private content: string;
 	

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const abstract_iterator_js_1 = require("./abstract-iterator.js");
-class StringIterator extends abstract_iterator_js_1.AbstractIterator {
+const abstract_iterator_1 = require("./abstract-iterator");
+class StringCharacterIterator extends abstract_iterator_1.AbstractIterator {
     constructor(content) {
         super();
         this.content = content;
@@ -20,5 +20,5 @@ class StringIterator extends abstract_iterator_js_1.AbstractIterator {
         this.index = 0;
     }
 }
-exports.StringIterator = StringIterator;
-//# sourceMappingURL=string-iterator.js.map
+exports.StringCharacterIterator = StringCharacterIterator;
+//# sourceMappingURL=string-character-iterator.js.map

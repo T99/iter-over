@@ -1,7 +1,7 @@
 /*
  *	Created by Trevor Sears <trevorsears.main@gmail.com>.
  *	12:30 AM -- June 16th, 2019.
- *	Website: iter-over
+ *	Project: iter-over
  */
 
 import { ObjectIterator } from "../object-iterator";

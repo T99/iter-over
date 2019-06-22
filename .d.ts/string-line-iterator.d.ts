@@ -1,5 +1,5 @@
-import { AbstractIterator } from "./abstract-iterator.js";
-export declare class StringIterator extends AbstractIterator<string> {
+import { AbstractIterator } from "./abstract-iterator";
+export declare class StringLineIterator extends AbstractIterator<string> {
     private content;
     private index;
     constructor(content: string);

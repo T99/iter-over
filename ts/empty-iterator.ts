@@ -1,10 +1,10 @@
 /*
  *	Created by Trevor Sears <trevorsears.main@gmail.com>.
  *	3:48 PM -- April 15th, 2019.
- *	Website: dashboard.ampelfeedback.com
+ *	Project: iter-over
  */
 
-import { AbstractIterator } from "./abstract-iterator.js";
+import { AbstractIterator } from "./abstract-iterator";
 
 /**
  * An empty iterator.

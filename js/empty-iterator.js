@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const abstract_iterator_js_1 = require("./abstract-iterator.js");
-class EmptyIterator extends abstract_iterator_js_1.AbstractIterator {
+const abstract_iterator_1 = require("./abstract-iterator");
+class EmptyIterator extends abstract_iterator_1.AbstractIterator {
     hasNext() {
         return false;
     }

@@ -1,7 +1,7 @@
 /*
  *	Created by Trevor Sears <trevorsears.main@gmail.com>.
  *	11:38 PM -- June 07th, 2019.
- *	Website: iter-over
+ *	Project: iter-over
  */
 
 /**
@@ -12,9 +12,10 @@
  * @since v0.1.0
  */
 
-export { AbstractIterator }		from "./abstract-iterator";
-export { EmptyIterator }	from "./empty-iterator";
-export { IIterator }		from "./i-iterator";
-export { KeyValuePair }	from "./key-value-pair";
-export { ObjectIterator }	from "./object-iterator";
-export { StringIterator }	from "./string-iterator";
+export { AbstractIterator }			from "./abstract-iterator";
+export { EmptyIterator }			from "./empty-iterator";
+export { IIterator }				from "./i-iterator";
+export { KeyValuePair }				from "./key-value-pair";
+export { ObjectIterator }			from "./object-iterator";
+export { StringCharacterIterator }	from "./string-character-iterator";
+export { StringLineIterator }		from "./string-line-iterator";
