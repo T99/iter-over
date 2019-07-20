@@ -5,19 +5,25 @@
   "main": "js/main",
   "types": ".d.ts/main",
   "scripts": {
-    "build": "rm -rf .d.ts/ js/ && tsc -p ts/tsconfig.json",
-    "test": "jest",
-    "main": "npm run build && node js/main.js"
+    "build": "gulp && jest",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/T99/iter-over.git"
   },
   "keywords": [
-    "iteration", "iter", "iterable", "iterator", "iterate",
-    "for in", "for-in",
-    "for of", "for-of",
-    "for each", "for-each"
+    "iteration",
+    "iter",
+    "iterable",
+    "iterator",
+    "iterate",
+    "for in",
+    "for-in",
+    "for of",
+    "for-of",
+    "for each",
+    "for-each"
   ],
   "author": "Trevor Sears <trevorsears.main@gmail.com> (http://trevorsears.io/)",
   "license": "GPL-3.0-or-later",
@@ -26,7 +32,13 @@
   },
   "homepage": "https://github.com/T99/iter-over#readme",
   "devDependencies": {
-    "@types/jest": "^24.0.14",
-    "jest": "^24.8.0"
+    "@types/jest": "^24.0.15",
+    "del": "latest",
+    "gulp": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-typescript": "latest",
+    "gulp-uglify-es": "latest",
+    "jest": "latest",
+    "typescript": "latest"
   }
 }

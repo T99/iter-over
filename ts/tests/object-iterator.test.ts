@@ -67,9 +67,7 @@ describe("Basic Object Iteration", () => {
 					break;
 					
 				default:
-					expect(iter.hasNext()).toBeFalsy();
-					expect(kvPair).toThrow();
-					break;
+					fail("Switch statement should not reach this case statement.");
 				
 			}
 			

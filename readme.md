@@ -110,3 +110,8 @@ console.log(iter.hasNext());
 
 // Prints 'false'.
 ```
+
+## License
+iter-over is made available under the GNU General Public License v3.
+
+Copyright (C) 2019 Trevor Sears
