@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1560660965402" clover="3.2.0">
+  <project timestamp="1560660965402" name="All files">
+    <metrics statements="32" coveredstatements="18" conditionals="10" coveredconditionals="6" methods="12" coveredmethods="6" elements="54" coveredelements="30" complexity="0" loc="32" ncloc="32" packages="1" files="2" classes="2"/>
+    <file name="abstract-iterator.ts" path="/home/trevor/dev/projects/javascript/iter-over/ts/abstract-iterator.ts">
+      <metrics statements="12" coveredstatements="7" conditionals="4" coveredconditionals="3" methods="7" coveredmethods="3"/>
+      <line num="16" count="2" type="stmt"/>
+      <line num="39" count="0" type="stmt"/>
+      <line num="50" count="0" type="stmt"/>
+      <line num="60" count="0" type="stmt"/>
+      <line num="66" count="2" type="stmt"/>
+      <line num="70" count="2" type="stmt"/>
+      <line num="74" count="2" type="stmt"/>
+      <line num="80" count="0" type="stmt"/>
+      <line num="86" count="14" type="cond" truecount="1" falsecount="1"/>
+      <line num="88" count="14" type="cond" truecount="2" falsecount="0"/>
+      <line num="90" count="14" type="stmt"/>
+      <line num="99" count="0" type="stmt"/>
+    </file>
+    <file name="object-iterator.ts" path="/home/trevor/dev/projects/javascript/iter-over/ts/object-iterator.ts">
+      <metrics statements="20" coveredstatements="11" conditionals="6" coveredconditionals="3" methods="5" coveredmethods="3"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="21" count="2" type="stmt"/>
+      <line num="25" count="2" type="stmt"/>
+      <line num="27" count="2" type="stmt"/>
+      <line num="29" count="2" type="cond" truecount="3" falsecount="1"/>
+      <line num="31" count="2" type="stmt"/>
+      <line num="33" count="0" type="stmt"/>
+      <line num="39" count="15" type="stmt"/>
+      <line num="45" count="8" type="stmt"/>
+      <line num="46" count="8" type="stmt"/>
+      <line num="48" count="8" type="stmt"/>
+      <line num="54" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="56" count="0" type="stmt"/>
+      <line num="57" count="0" type="stmt"/>
+      <line num="58" count="0" type="stmt"/>
+      <line num="60" count="0" type="stmt"/>
+      <line num="62" count="0" type="stmt"/>
+      <line num="66" count="0" type="stmt"/>
+      <line num="74" count="0" type="stmt"/>
+    </file>
+  </project>
+</coverage>
