@@ -10,14 +10,16 @@ $ npm install --save iter-over
 ```
 
 ## Basic Usage
-For most use-cases you'll want to extend `AbstractIterator` (the iter-over abstract iterator class). The abstract class implements such methods as `#forEachRemaining(callback)` and automagically implements the `[Symbol.iterator]` method so that you don't have to! The only methods you have to implement are:
+For most use-cases you'll want to extend `AbstractIterator` (the iter-over abstract iterator class). This abstract class implements such methods as `#forEachRemaining(callback)` and automagically implements the `[Symbol.iterator]` method so that you don't have to!
+
+The only methods you have to implement are:
 
 ```typescript
 public hasNext(): boolean { ... }
-public next(): T | undefined { ... }
+public next(): T { ... }
 ```
 
-Once you've done that, you can freely use the iterator as such:
+So for example, an inline implementation would look something like:
 
 ```typescript
 import { AbstractIterator } from "iter-over";
@@ -28,7 +30,7 @@ class MyCounter extends AbstractIterator<number> {
 	
 	public hasNext(): boolean {
 		
-		return (this.val < 10);
+		return (this.val <= 9);
 		
 	}
 	
@@ -39,7 +41,11 @@ class MyCounter extends AbstractIterator<number> {
 	}
 	
 }
+```
 
+Once you've done that, you can freely use the iterator as such:
+
+```typescript
 let counter: MyCounter = new MyCounter();
 
 for (let counterVal of counter) console.log(counterVal);
@@ -59,6 +65,19 @@ let iter: StringCharacterIterator = new StringCharacterIterator("Hello!");
 for (let character of iter) console.log(character);
 
 // Prints 'H', 'e', 'l', 'l', 'o', '!'.
+```
+
+### StringLineIterator
+StringLineIterator iterates over the lines of a provided input string.
+
+```typescript
+let iter: StringLineIterator = new StringLineIterator(`Hello
+there,
+world!`);
+
+for (let line of iter) console.log(line);
+
+// Prints 'Hello', 'there,', 'world!'.
 ```
 
 ### ObjectIterator

@@ -1,14 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1563590813725" clover="3.2.0">
-  <project timestamp="1563590813725" name="All files">
-    <metrics statements="2" coveredstatements="2" conditionals="10" coveredconditionals="6" methods="12" coveredmethods="6" elements="24" coveredelements="14" complexity="0" loc="2" ncloc="2" packages="1" files="2" classes="2"/>
-    <file name="abstract-iterator.js" path="/home/trevor/dev/projects/javascript/iter-over/js/abstract-iterator.js">
-      <metrics statements="1" coveredstatements="1" conditionals="4" coveredconditionals="3" methods="7" coveredmethods="3"/>
-      <line num="1" count="14" type="cond" truecount="3" falsecount="1"/>
+<coverage generated="1563755593665" clover="3.2.0">
+  <project timestamp="1563755593665" name="All files">
+    <metrics statements="29" coveredstatements="22" conditionals="8" coveredconditionals="5" methods="21" coveredmethods="16" elements="58" coveredelements="43" complexity="0" loc="29" ncloc="29" packages="1" files="4" classes="4"/>
+    <file name="abstract-iterator.ts" path="/home/trevor/dev/projects/javascript/iter-over/ts/abstract-iterator.ts">
+      <metrics statements="8" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="6"/>
+      <line num="16" count="8" type="stmt"/>
+      <line num="39" count="43" type="stmt"/>
+      <line num="50" count="2" type="stmt"/>
+      <line num="60" count="2" type="stmt"/>
+      <line num="66" count="1" type="stmt"/>
+      <line num="72" count="1" type="stmt"/>
+      <line num="78" count="0" type="stmt"/>
+      <line num="84" count="4" type="stmt"/>
     </file>
-    <file name="object-iterator.js" path="/home/trevor/dev/projects/javascript/iter-over/js/object-iterator.js">
-      <metrics statements="1" coveredstatements="1" conditionals="6" coveredconditionals="3" methods="5" coveredmethods="3"/>
-      <line num="1" count="15" type="cond" truecount="3" falsecount="3"/>
+    <file name="empty-iterator.ts" path="/home/trevor/dev/projects/javascript/iter-over/ts/empty-iterator.ts">
+      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <line num="7" count="2" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
+    </file>
+    <file name="object-iterator.ts" path="/home/trevor/dev/projects/javascript/iter-over/ts/object-iterator.ts">
+      <metrics statements="11" coveredstatements="6" conditionals="6" coveredconditionals="3" methods="5" coveredmethods="3"/>
+      <line num="7" count="2" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="25" count="2" type="stmt"/>
+      <line num="39" count="11" type="stmt"/>
+      <line num="45" count="8" type="stmt"/>
+      <line num="48" count="8" type="stmt"/>
+      <line num="54" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="56" count="0" type="stmt"/>
+      <line num="58" count="0" type="stmt"/>
+      <line num="62" count="0" type="stmt"/>
+      <line num="74" count="0" type="stmt"/>
+    </file>
+    <file name="string-line-iterator.ts" path="/home/trevor/dev/projects/javascript/iter-over/ts/string-line-iterator.ts">
+      <metrics statements="7" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="3"/>
+      <line num="7" count="2" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="24" count="6" type="stmt"/>
+      <line num="33" count="10" type="stmt"/>
+      <line num="39" count="14" type="stmt"/>
+      <line num="41" count="14" type="cond" truecount="2" falsecount="0"/>
+      <line num="54" count="0" type="stmt"/>
     </file>
   </project>
 </coverage>

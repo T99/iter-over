@@ -27,7 +27,7 @@ export abstract class AbstractIterator<T> implements IIterator<T> {
 	 *
 	 * @returns {T} The next element this AbstractIterator has.
 	 */
-	public abstract next(): T | undefined;
+	public abstract next(): T;
 	
 	/**
 	 * Performs the specified action for all of the remaining elements in this AbstractIterator.
@@ -36,7 +36,7 @@ export abstract class AbstractIterator<T> implements IIterator<T> {
 	 */
 	public forEachRemaining(callback: (element: T) => void): void {
 		
-		while (this.hasNext()) callback(this.next() as T);
+		while (this.hasNext()) callback(this.next());
 		
 	}
 	
@@ -67,8 +67,6 @@ export abstract class AbstractIterator<T> implements IIterator<T> {
 			
 			private iterator: AbstractIterator<T>;
 			
-			private hadFinalIteration: boolean = false;
-			
 			public constructor(iterator: AbstractIterator<T>) {
 				
 				this.iterator = iterator;
@@ -83,27 +81,17 @@ export abstract class AbstractIterator<T> implements IIterator<T> {
 			
 			public next(): IteratorResult<T> {
 				
-				if (!this.hadFinalIteration) {
+				return {
 					
-					if (!this.iterator.hasNext()) this.hadFinalIteration = true;
+					done: !this.iterator.hasNext(),
+					value: this.iterator.next()
 					
-					return {
-						
-						done: !this.iterator.hasNext(),
-						value: this.iterator.next() as T
-						
-					};
-					
-				} else {
-					
-					throw new Error("ERR | Attempted to call #next on an Iterator that did not have another " +
-						"well-defined value.");
-					
-				}
+				};
 				
 			}
 			
 		}(this);
+		
 	}
 	
 }

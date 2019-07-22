@@ -23,7 +23,7 @@ export class StringLineIterator extends AbstractIterator<string> {
 		
 		super();
 		
-		this.content = content.trim().split("\n");
+		this.content = content.trim().split(/\r\n|\r|\n/);
 		this.index = 0;
 		
 	}
