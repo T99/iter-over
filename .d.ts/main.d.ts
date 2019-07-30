@@ -3,5 +3,6 @@ export { EmptyIterator } from "./empty-iterator";
 export { IIterator } from "./i-iterator";
 export { KeyValuePair } from "./key-value-pair";
 export { ObjectIterator } from "./object-iterator";
+export { ArrayIterator } from "./array-iterator";
 export { StringCharacterIterator } from "./string-character-iterator";
 export { StringLineIterator } from "./string-line-iterator";

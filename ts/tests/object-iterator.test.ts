@@ -18,7 +18,7 @@ describe("Basic Object Iteration", () => {
 			
 		};
 		
-		let iter: ObjectIterator = new ObjectIterator(obj);
+		let iter: ObjectIterator<any> = new ObjectIterator<any>(obj);
 		
 		expect(iter.hasNext()).toBeTruthy();
 		expect(iter.next()).toStrictEqual({ key: "name", value: "Trevor" });
@@ -28,6 +28,30 @@ describe("Basic Object Iteration", () => {
 		
 		expect(iter.hasNext()).toBeTruthy();
 		expect(iter.next()).toStrictEqual({ key: "money", value: false });
+		
+		expect(iter.hasNext()).toBeFalsy();
+		expect(iter.next()).toStrictEqual({ key: undefined, value: undefined });
+		
+	});
+	
+	test("Array Object", () => {
+		
+		let arr: any[] = [
+			"Hello",
+			1,
+			false
+		];
+		
+		let iter: ObjectIterator<any> = new ObjectIterator<any>(arr);
+		
+		expect(iter.hasNext()).toBeTruthy();
+		expect(iter.next()).toStrictEqual({ key: "0", value: "Hello" });
+		
+		expect(iter.hasNext()).toBeTruthy();
+		expect(iter.next()).toStrictEqual({ key: "1", value: 1 });
+		
+		expect(iter.hasNext()).toBeTruthy();
+		expect(iter.next()).toStrictEqual({ key: "2", value: false });
 		
 		expect(iter.hasNext()).toBeFalsy();
 		expect(iter.next()).toStrictEqual({ key: undefined, value: undefined });
