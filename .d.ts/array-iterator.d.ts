@@ -4,5 +4,7 @@ export declare class ArrayIterator<E> extends AbstractIterator<E> {
     private cursor;
     constructor(array: E[]);
     hasNext(): boolean;
-    next(): E;
+    next(): E | undefined;
+    remove(): E | undefined;
+    reset(): void;
 }

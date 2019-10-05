@@ -60,44 +60,102 @@ describe("Basic Object Iteration", () => {
 	
 	test("[Symbol.iterator]", () => {
 		
-		let obj: any = {
-			
-			name: "Trevor",
-			time: 0,
-			money: false
-			
-		};
 		
-		let iter: ObjectIterator = new ObjectIterator(obj);
-		let item: number = 0;
 		
-		for (let kvPair of iter) {
+	});
+	
+});
+
+describe("Per-method tests.", () => {
+	
+	describe("#hasNext", () => {
+		
+		test("TODO", () => {
 			
-			switch (item) {
+			// TODO [10/4/19 @ 11:02 PM] Finish test body.
+			fail("Test not yet written...");
+			
+		});
+		
+	});
+	
+	describe("#next", () => {
+		
+		test("TODO", () => {
+			
+			// TODO [10/4/19 @ 11:02 PM] Finish test body.
+			fail("Test not yet written...");
+			
+		});
+		
+	});
+	
+	describe("#remove", () => {
+		
+		test("TODO", () => {
+			
+			// TODO [10/4/19 @ 11:02 PM] Finish test body.
+			fail("Test not yet written...");
+			
+		});
+		
+	});
+	
+	describe("#reset", () => {
+		
+		test("TODO", () => {
+			
+			// TODO [10/4/19 @ 11:02 PM] Finish test body.
+			fail("Test not yet written...");
+			
+		});
+		
+	});
+	
+	describe("#[Symbol.iterator]", () => {
+		
+		test("TODO", () => {
+			
+			let obj: any = {
 				
-				case 0:
-					expect(iter.hasNext()).toBeTruthy();
-					expect(kvPair).toStrictEqual({ key: "name", value: "Trevor" });
-					break;
+				name: "Trevor",
+				time: 0,
+				money: false
 				
-				case 1:
-					expect(iter.hasNext()).toBeTruthy();
-					expect(kvPair).toStrictEqual({ key: "time", value: 0 });
-					break;
+			};
+			
+			let iter: ObjectIterator = new ObjectIterator(obj);
+			let item: number = 0;
+			
+			for (let kvPair of iter) {
 				
-				case 2:
-					expect(iter.hasNext()).toBeFalsy();
-					expect(kvPair).toStrictEqual({ key: "money", value: false });
-					break;
+				switch (item) {
 					
-				default:
-					fail("Switch statement should not reach this case statement.");
+					case 0:
+						expect(iter.hasNext()).toBeTruthy();
+						expect(kvPair).toStrictEqual({ key: "name", value: "Trevor" });
+						break;
+					
+					case 1:
+						expect(iter.hasNext()).toBeTruthy();
+						expect(kvPair).toStrictEqual({ key: "time", value: 0 });
+						break;
+					
+					case 2:
+						expect(iter.hasNext()).toBeFalsy();
+						expect(kvPair).toStrictEqual({ key: "money", value: false });
+						break;
+					
+					default:
+						fail("Switch statement should not reach this case statement.");
+					
+				}
+				
+				item++;
 				
 			}
 			
-			item++;
-			
-		}
+		});
 		
 	});
 	

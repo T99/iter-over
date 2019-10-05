@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">55% </span>
+        <span class="strong">54.55% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>11/20</span>
+        <span class='fraction'>6/11</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">50% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>3/5</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">55% </span>
+        <span class="strong">54.55% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>11/20</span>
+        <span class='fraction'>6/11</span>
       </div>
     </div>
     <p class="quiet">
@@ -129,7 +129,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -143,19 +143,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -168,18 +168,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">12x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -189,6 +185,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -228,11 +228,11 @@ export class ObjectIterator&lt;E = any&gt; extends AbstractIterator&lt;KeyValueP
 		
 		this.content = content;
 		
-		<span class="missing-if-branch" title="else path not taken" >E</span>if ((this.content !== null) &amp;&amp; (this.content !== undefined)) {
+		if ((this.content !== null) &amp;&amp; (this.content !== undefined)) {
 			
 			this.keys = Object.keys(this.content);
 			
-		} else <span class="cstat-no" title="statement not covered" >this.keys = [];</span>
+		} else <span class="branch-1 cbranch-no" title="branch not covered" >this.keys = [];</span>
 		
 	}
 	
@@ -251,27 +251,27 @@ export class ObjectIterator&lt;E = any&gt; extends AbstractIterator&lt;KeyValueP
 		
 	}
 	
-	public <span class="fstat-no" title="function not covered" >remove(</span>): KeyValuePair&lt;string, E&gt; | undefined {
+	public <span class="fstat-no" title="function not covered" >remove(): KeyValuePair&lt;string, E&gt; | undefined {</span>
 		
 <span class="cstat-no" title="statement not covered" >		if (this.index &gt; 0) {</span>
 			
 			let key: string = <span class="cstat-no" title="statement not covered" >this.keys[--this.index];</span>
-			let value: E = <span class="cstat-no" title="statement not covered" >this.content[key];</span>
+			let value: E = this.content[key];
 			let result: KeyValuePair&lt;string, E&gt; = <span class="cstat-no" title="statement not covered" >{ key, value };</span>
 			
-<span class="cstat-no" title="statement not covered" >			delete this.content[key];</span>
+			delete this.content[key];
 			
 <span class="cstat-no" title="statement not covered" >			return result;</span>
 			
 		} else {
 			
-<span class="cstat-no" title="statement not covered" >			return undefined;</span>
+			return undefined;
 			
 		}
 		
 	}
 	
-	public <span class="fstat-no" title="function not covered" >reset(</span>): void {
+	public <span class="fstat-no" title="function not covered" >reset(): void {</span>
 		
 <span class="cstat-no" title="statement not covered" >		this.index = 0;</span>
 		
@@ -283,7 +283,7 @@ export class ObjectIterator&lt;E = any&gt; extends AbstractIterator&lt;KeyValueP
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Jul 29 2019 21:49:24 GMT-0400 (Eastern Daylight Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Oct 05 2019 16:34:06 GMT-0400 (Eastern Daylight Time)
 </div>
 </div>
 <script src="prettify.js"></script>

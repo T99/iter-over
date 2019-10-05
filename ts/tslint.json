@@ -73,7 +73,7 @@
 		
 		"object-literal-sort-keys": [true, "match-declaration-order"],
 		
-		"only-arrow-functions": true,
+		"only-arrow-functions": false,
 		
 		"ordered-imports": false,
 		

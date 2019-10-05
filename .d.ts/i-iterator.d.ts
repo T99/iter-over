@@ -1,8 +1,9 @@
-export interface IIterator<T> {
+export interface IIterator<E> {
     hasNext(): boolean;
-    next(): T | undefined;
-    forEachRemaining(callback: (element: T) => void): void;
-    remove?(): T | undefined;
+    next(): E | undefined;
+    forEachRemaining(callback: (element: E) => void): void;
+    remove?(): E | undefined;
     reset?(): void;
-    [Symbol.iterator](): IterableIterator<T | undefined>;
+    [Symbol.iterator](): IterableIterator<E>;
+    getIterableIterator(): IterableIterator<E>;
 }
