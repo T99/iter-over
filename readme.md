@@ -16,7 +16,7 @@ The only methods you have to implement are:
 
 ```typescript
 public hasNext(): boolean { ... }
-public next(): T { ... }
+public next(): E | undefined { ... }
 ```
 
 So for example, an inline implementation would look something like:
