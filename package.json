@@ -5,7 +5,7 @@
   "main": "js/main",
   "types": ".d.ts/main",
   "scripts": {
-    "build": "gulp && jest",
+    "build": "gulp",
     "test": "jest"
   },
   "repository": {
