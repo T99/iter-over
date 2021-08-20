@@ -42,16 +42,16 @@ describe("Basic Object Iteration", () => {
 			false
 		];
 		
-		let iter: ObjectIterator<any> = new ObjectIterator<any>(arr);
+		let iter: ObjectIterator<any> = new ObjectIterator(arr);
 		
 		expect(iter.hasNext()).toBeTruthy();
-		expect(iter.next()).toStrictEqual({ key: "0", value: "Hello" });
+		expect(iter.next()).toStrictEqual({ key: 0, value: "Hello" });
 		
 		expect(iter.hasNext()).toBeTruthy();
-		expect(iter.next()).toStrictEqual({ key: "1", value: 1 });
+		expect(iter.next()).toStrictEqual({ key: 1, value: 1 });
 		
 		expect(iter.hasNext()).toBeTruthy();
-		expect(iter.next()).toStrictEqual({ key: "2", value: false });
+		expect(iter.next()).toStrictEqual({ key: 2, value: false });
 		
 		expect(iter.hasNext()).toBeFalsy();
 		expect(iter.next()).toStrictEqual({ key: undefined, value: undefined });
@@ -59,9 +59,9 @@ describe("Basic Object Iteration", () => {
 	});
 	
 	test("[Symbol.iterator]", () => {
-		
-		
-		
+	
+	
+	
 	});
 	
 });
@@ -124,7 +124,12 @@ describe("Per-method tests.", () => {
 				
 			};
 			
-			let iter: ObjectIterator = new ObjectIterator(obj);
+			let iter: ObjectIterator<{
+				name: string,
+				time: number,
+				money: boolean
+			}> = new ObjectIterator(obj);
+			
 			let item: number = 0;
 			
 			for (let kvPair of iter) {

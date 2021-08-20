@@ -14,217 +14,274 @@ import { ArrayIterator } from "../array-iterator";
  * @since v1.5.0
  */
 
-describe("Initialization", () => {
+describe("Initialization", (): void => {
 	
-	test("With empty input array.", () => {
+	test("With empty input array.", (): void => {
 		
-		let arrayIterator: ArrayIterator<number> = new ArrayIterator<number>([]);
-		
-		// To keep my IDE from yelling at me.
-		arrayIterator;
+		expect((): void => {
+			
+			new ArrayIterator<number>([]);
+			
+		}).not.toThrowError();
 		
 	});
 	
-	test("With populated input array.", () => {
+	test("With populated input array.", (): void => {
 		
-		let arrayIterator: ArrayIterator<number> = new ArrayIterator<number>([1, 2, 3, 4, 5]);
-		
-		// To keep my IDE from yelling at me.
-		arrayIterator;
+		expect((): void => {
+			
+			new ArrayIterator<number>([1, 2, 3, 4, 5]);
+			
+		}).not.toThrowError();
 		
 	});
 	
 });
 
-function getUnpopulatedIterator(): ArrayIterator<any> {
-	
-	return new ArrayIterator<any>([]);
-	
-}
+const iteratorArray: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-function getPopulatedIterator(): ArrayIterator<number> {
-	
-	return new ArrayIterator<number>([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-	
-}
+let populatedIterator: ArrayIterator<number>;
+let unpopulatedIterator: ArrayIterator<number>;
 
-describe("Per-method tests.", () => {
+describe("Per-method tests.", (): void => {
 	
-	describe("#hasNext", () => {
+	beforeEach((): void => {
 		
-		test("Returns true at the beginning of a populated ArrayIterator.", () => {
+		populatedIterator = new ArrayIterator<number>([...iteratorArray]);
+		unpopulatedIterator = new ArrayIterator<number>([]);
 		
-			expect(getPopulatedIterator().hasNext()).toBeTruthy();
+	});
+	
+	describe("#hasNext", (): void => {
+		
+		test("Returns true at the beginning of a populated ArrayIterator.", (): void => {
+		
+			expect(populatedIterator.hasNext()).toBeTruthy();
 			
 		});
 		
-		test("Returns false at the beginning of an unpopulated ArrayIterator.", () => {
+		test("Returns false at the beginning of an unpopulated ArrayIterator.", (): void => {
 			
-			expect(getUnpopulatedIterator().hasNext()).toBeFalsy();
+			expect(unpopulatedIterator.hasNext()).toBeFalsy();
 			
 		});
 		
-		test("Returns true for every element except for the last.", () => {
+		test("Returns true for every element except for the last.", (): void => {
 			
-			let iterator: ArrayIterator<number> = getPopulatedIterator();
+			for (let i: number = 0; i < iteratorArray.length; i++) {
+				
+				expect(populatedIterator.hasNext()).toBeTruthy();
+				populatedIterator.next();
+				
+			}
 			
-			expect(iterator.hasNext()).toBeTruthy();
-			iterator.next(); // 0
-			
-			expect(iterator.hasNext()).toBeTruthy();
-			iterator.next(); // 1
-			
-			expect(iterator.hasNext()).toBeTruthy();
-			iterator.next(); // 2
-			
-			expect(iterator.hasNext()).toBeTruthy();
-			iterator.next(); // 3
-			
-			expect(iterator.hasNext()).toBeTruthy();
-			iterator.next(); // 4
-			
-			expect(iterator.hasNext()).toBeTruthy();
-			iterator.next(); // 5
-			
-			expect(iterator.hasNext()).toBeTruthy();
-			iterator.next(); // 6
-			
-			expect(iterator.hasNext()).toBeTruthy();
-			iterator.next(); // 7
-			
-			expect(iterator.hasNext()).toBeTruthy();
-			iterator.next(); // 8
-			
-			expect(iterator.hasNext()).toBeTruthy();
-			iterator.next(); // 9
-			
-			expect(iterator.hasNext()).toBeTruthy();
-			iterator.next(); // 10
-			
-			expect(iterator.hasNext()).toBeFalsy();
+			expect(populatedIterator.hasNext()).toBeFalsy();
 			
 		});
 		
 	});
 	
-	describe("#next", () => {
+	describe("#next", (): void => {
 		
-		test("Returns undefined at the beginning of an unpopulated ArrayIterator.", () => {
+		test("Returns undefined at the beginning of an unpopulated ArrayIterator.", (): void => {
 		
-			expect(getUnpopulatedIterator().next()).toBeUndefined();
+			expect(unpopulatedIterator.next()).toBeUndefined();
 			
 		});
 		
-		test("Returns the proper elements from a populated ArrayIterator.", () => {
+		test("Returns the proper elements from a populated ArrayIterator.", (): void => {
 			
-			let iterator: ArrayIterator<number> = getPopulatedIterator();
-			
-			expect(iterator.next()).toBe(0);
-			expect(iterator.next()).toBe(1);
-			expect(iterator.next()).toBe(2);
-			expect(iterator.next()).toBe(3);
-			expect(iterator.next()).toBe(4);
-			expect(iterator.next()).toBe(5);
-			expect(iterator.next()).toBe(6);
-			expect(iterator.next()).toBe(7);
-			expect(iterator.next()).toBe(8);
-			expect(iterator.next()).toBe(9);
-			expect(iterator.next()).toBe(10);
+			for (let value of iteratorArray) {
+				
+				expect(populatedIterator.next()).toBe(value);
+				
+			}
 			
 		});
 		
-		test("Returns undefined at the end of a populated ArrayIterator.", () => {
+		test("Returns undefined at the end of a populated ArrayIterator.", (): void => {
 			
-			let iterator: ArrayIterator<number> = getPopulatedIterator();
+			for (let count: number = 0; count < iteratorArray.length; count++) populatedIterator.next();
 			
-			for (let count: number = 0; count < 11; count++) iterator.next();
-			
-			expect(iterator.next()).toBeUndefined();
+			expect(populatedIterator.next()).toBeUndefined();
 			
 		});
 		
 	});
 	
-	describe("#forEachRemaining", () => {
+	describe("#forEachRemaining", (): void => {
 		
-		describe("Callback is called the expected number of times.", () => {
+		describe("Callback is called the expected number of times.", (): void => {
 			
-			test("For an empty ArrayIterator.", () => {
+			test("For an empty ArrayIterator.", (): void => {
 				
 				let count: number = 0;
-				let iterator: ArrayIterator<number> = getUnpopulatedIterator();
 				
-				iterator.forEachRemaining(() => count++);
+				unpopulatedIterator.forEachRemaining(() => count++);
 				
 				expect(count).toBe(0);
 				
 			});
 			
-			test("For a populated ArrayIterator.", () => {
+			test("For a populated ArrayIterator.", (): void => {
 				
 				let count: number = 0;
-				let iterator: ArrayIterator<number> = getPopulatedIterator();
 				
-				iterator.forEachRemaining(() => count++);
+				populatedIterator.forEachRemaining(() => count++);
 				
-				expect(count).toBe(11);
+				expect(count).toBe(iteratorArray.length);
 				
 			});
 			
 		});
 		
-		test("Callback returns the expected elements in the expected order.", () => {
+		test("Callback returns the expected elements in the expected order.", (): void => {
 			
-			let iterator: ArrayIterator<number> = getPopulatedIterator();
 			let resultSet: number[] = [];
 			
-			iterator.forEachRemaining((element: number) => resultSet.push(element));
+			populatedIterator.forEachRemaining((element: number) => resultSet.push(element));
 			
-			expect(resultSet).toStrictEqual([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-			
-		});
-		
-	});
-	
-	describe("#remove", () => {
-		
-		test("TODO", () => {
-		
-			// TODO [10/4/19 @ 11:02 PM] Finish test body.
-			fail("Test not yet written...");
+			expect(resultSet).toStrictEqual(iteratorArray);
 			
 		});
 		
 	});
 	
-	describe("#reset", () => {
+	describe("#remove", (): void => {
 		
-		test("TODO", () => {
+		test("Returns undefined for every call on empty iterator.", (): void => {
 		
-			// TODO [10/4/19 @ 11:02 PM] Finish test body.
-			fail("Test not yet written...");
+			expect(unpopulatedIterator.remove()).toBeUndefined();
+			
+			expect(unpopulatedIterator.remove()).toBeUndefined();
+			
+			expect(unpopulatedIterator.remove()).toBeUndefined();
+			
+		});
+		
+		test("Returns undefined if #next has not yet been called.", (): void => {
+			
+			expect(populatedIterator.remove()).toBeUndefined();
+			
+		});
+		
+		
+		
+		test("Returns undefined beyond the end of the iteration content.", (): void => {
+			
+			for (let i: number = 0; i < iteratorArray.length + 1; i++) populatedIterator.next();
+			
+			expect(populatedIterator.remove()).toBeUndefined();
+			
+		});
+		
+		test("Returns the same result as the last call to #next in all cases.", (): void => {
+			
+			for (let i: number = 0; i < iteratorArray.length + 5; i++) {
+				
+				expect(populatedIterator.next()).toStrictEqual(populatedIterator.remove());
+				
+			}
+			
+		});
+		
+		test("Correctly modifies the underlying data structure.", (): void => {
+		
+		
+		
+		});
+		
+	});
+	
+	describe("#reset", (): void => {
+		
+		test("Should have no effect if called prior to any iteration.", (): void => {
+		
+			populatedIterator.reset();
+			
+			expect(populatedIterator.next()).toBe(iteratorArray[0]);
+			
+		});
+		
+		test("Should reset a partially exhausted iterator to it's start.", (): void => {
+			
+			for (let i: number = 0; i < iteratorArray.length / 2; i++) populatedIterator.next();
+			
+			populatedIterator.reset();
+			
+			expect(populatedIterator.next()).toBe(iteratorArray[0]);
+			
+		});
+		
+		test("Should reset a fully exhausted iterator to it's start.", (): void => {
+			
+			for (let i: number = 0; i < iteratorArray.length; i++) populatedIterator.next();
+			
+			populatedIterator.reset();
+			
+			expect(populatedIterator.next()).toBe(iteratorArray[0]);
+			
+		});
+		
+		test("Should reset an iterator that is past it's end to it's start.", (): void => {
+			
+			for (let i: number = 0; i < 2 * iteratorArray.length; i++) populatedIterator.next();
+			
+			populatedIterator.reset();
+			
+			expect(populatedIterator.next()).toBe(iteratorArray[0]);
 			
 		});
 		
 	});
 	
-	describe("#[Symbol.iterator]", () => {
+	describe("#[Symbol.iterator]", (): void => {
 		
-		test("TODO", () => {
+		test("Successfully allows spread syntax.", (): void => {
 			
-			// TODO [10/4/19 @ 11:02 PM] Finish test body.
-			fail("Test not yet written...");
+			expect([...populatedIterator]).toStrictEqual(iteratorArray);
+			
+		});
+		
+		test("Successfully allows for-in iteration.", (): void => {
+			
+			for (let prop in populatedIterator) expect(prop).toBeDefined();
+			
+		});
+		
+		test("Successfully allows for-of iteration.", (): void => {
+			
+			let count: number = 0;
+			
+			for (let value of populatedIterator) expect(value).toBe(iteratorArray[count++]);
+			
+			expect(count).toBe(iteratorArray.length);
 			
 		});
 		
 	});
 	
-	describe("#getIterableIterator", () => {
+	describe("#getIterableIterator", (): void => {
 		
-		test("TODO", () => {
+		test("Successfully allows spread syntax.", (): void => {
 			
-			// TODO [10/4/19 @ 11:02 PM] Finish test body.
-			fail("Test not yet written...");
+			expect([...populatedIterator.getIterableIterator()]).toStrictEqual(iteratorArray);
+			
+		});
+		
+		test("Successfully allows for-in iteration.", (): void => {
+			
+			for (let prop in populatedIterator.getIterableIterator()) expect(prop).toBeDefined();
+			
+		});
+		
+		test("Successfully allows for-of iteration.", (): void => {
+			
+			let count: number = 0;
+			
+			for (let value of populatedIterator.getIterableIterator()) expect(value).toBe(iteratorArray[count++]);
+			
+			expect(count).toBe(iteratorArray.length);
 			
 		});
 		

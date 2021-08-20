@@ -28,11 +28,11 @@ describe("Single-line input.", () => {
 	
 	test("Expect single returned value.", () => {
 		
-		let returnedValues: number = 0;
+		let count: number = 0;
 		
-		iterator.forEachRemaining(() => returnedValues++);
+		iterator.forEachRemaining(() => count++);
 		
-		expect(returnedValues).toBe(1);
+		expect(count).toBe(1);
 		
 	});
 	
@@ -91,6 +91,20 @@ string content`;
 		iterator.next();
 		
 		expect(iterator.next()).toBeUndefined();
+		
+	});
+	
+	test("Expect #reset to successfully return the iterator to the beginning of the content.", (): void => {
+		
+		iterator.next();
+		iterator.next();
+		iterator.next();
+		iterator.next();
+		iterator.next();
+		
+		iterator.reset();
+		
+		expect(iterator.next()).toBe("This is")
 		
 	});
 	
