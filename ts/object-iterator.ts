@@ -5,22 +5,66 @@
  */
 
 import { AbstractIterator } from "./abstract-iterator";
-import { KeyValuePair } from "./key-value-pair";
+
+type StringIndexedObject = {
+	[property: string]: any
+};
+
 
 /**
- * A AbstractIterator that iterates over the keys of an object.
+ * A key-value data pair.
  *
  * @author Trevor Sears <trevorsears.main@gmail.com>
- * @version v1.0.0
+ * @version v2.0.0
  * @since v0.1.0
  */
-export class ObjectIterator<E = any> extends AbstractIterator<KeyValuePair<string, E>> {
+export type KeyValuePair<K, V> = {
 	
-	private content: any;
-	private keys: string[];
+	readonly key: K;
+	
+	readonly value: V;
+	
+}
+
+/**
+ * A union over the possible types of values that are stored in the specified type.
+ *
+ * @author Trevor Sears <trevorsears.main@gmail.com>
+ * @version v2.0.0.
+ * @since v2.0.0
+ */
+type ValueOf<T> = T[keyof T];
+
+/**
+ * An iterator that iterates over the keys of an object.
+ *
+ * @author Trevor Sears <trevorsears.main@gmail.com>
+ * @version v2.0.0
+ * @since v0.1.0
+ */
+export class ObjectIterator<T extends StringIndexedObject> extends AbstractIterator<KeyValuePair<keyof T, ValueOf<T>>> {
+	
+	/**
+	 * The content (object) that this ObjectIterator is iterating over.
+	 */
+	private readonly content: T;
+	
+	/**
+	 * The keys of the associated object that will be iterated over by this ObjectIterator.
+	 */
+	private readonly keys: (keyof T)[];
+	
+	/**
+	 * The index of the next key that could be returned by this ObjectIterator.
+	 */
 	private index: number = 0;
 	
-	public constructor(content: any) {
+	/**
+	 * Initializes a new ObjectIterator object with the specified object.
+	 *
+	 * @param {T} content The content (object) that this ObjectIterator should iterate over.
+	 */
+	public constructor(content: T) {
 		
 		super();
 		
@@ -28,47 +72,65 @@ export class ObjectIterator<E = any> extends AbstractIterator<KeyValuePair<strin
 		
 		if ((this.content !== null) && (this.content !== undefined)) {
 			
-			this.keys = Object.keys(this.content);
+			this.keys = Object.keys(this.content) as (keyof T)[];
 			
 		} else this.keys = [];
 		
 	}
 	
+	/**
+	 * Returns true if a call to #next() would return a meaningful result after calling this method.
+	 *
+	 * @returns {boolean} true if a call to #next() would return a meaningful result.
+	 */
 	public hasNext(): boolean {
 		
 		return (this.index < this.keys.length);
 		
 	}
 	
-	public next(): KeyValuePair<string, E> {
+	/**
+	 * Returns the next KeyValuePair that this ObjectIterator has to iterate over.
+	 *
+	 * @returns {KeyValuePair<keyof T, ValueOf<T>>} The next KeyValuePair this ObjectIterator has.
+	 */
+	public next(): KeyValuePair<keyof T, ValueOf<T>> {
 		
-		let key: string = this.keys[this.index++];
-		let value: E = this.content[key];
+		let key: keyof T = this.keys[this.index++];
+		let value: ValueOf<T> = this.content[key];
 		
 		return { key, value };
 		
 	}
 	
-	public remove(): KeyValuePair<string, E> | undefined {
+	/**
+	 * Removes and returns the last element returned by the #next() method from the underlying object.
+	 *
+	 * @returns {KeyValuePair<keyof T, ValueOf<T>> | undefined} The last element returned by the #next() method.
+	 */
+	public remove(): KeyValuePair<keyof T, ValueOf<T>> | undefined {
+		
+		// TODO [8/20/2021 @ 1:39 PM] Test if this function actually successfully modifies the value as a reference
+		//                            rather than a copy.
 		
 		if (this.index > 0) {
 			
-			let key: string = this.keys[--this.index];
-			let value: E = this.content[key];
-			let result: KeyValuePair<string, E> = { key, value };
+			let key: keyof T = this.keys[--this.index];
+			let value: ValueOf<T> = this.content[key];
+			let result: KeyValuePair<keyof T, ValueOf<T>> = { key, value };
 			
 			delete this.content[key];
 			
 			return result;
 			
-		} else {
-			
-			return undefined;
-			
-		}
+		} else return undefined;
 		
 	}
 	
+	/**
+	 * Resets this ObjectIterator back to it's initial position, readying it to iterate over the underlying object from
+	 * the 'beginning' again.
+	 */
 	public reset(): void {
 		
 		this.index = 0;
