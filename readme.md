@@ -1,7 +1,15 @@
 # iter-over
-iter-over is an iteration toolset for JavaScript/TypeScript that provides interfaces as well as utility classes for iteration using the native JavaScript `Symbol.iterator` method.
+iter-over is an iteration toolset for JavaScript/TypeScript that provides interfaces as well as utility classes for
+iteration using the native JavaScript `Symbol.iterator` method.
 
 ### [Find iter-over on NPM.](https://www.npmjs.com/package/iter-over)
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Basic Usage](#basic-usage)
+- [Documentation](#documentation)
+- [License](#license)
 
 ## Installation
 Install from NPM with
@@ -10,7 +18,9 @@ $ npm install --save iter-over
 ```
 
 ## Basic Usage
-For most use-cases you'll want to extend `AbstractIterator` (the iter-over abstract iterator class). This abstract class implements such methods as `#forEachRemaining(callback)` and automagically implements the `[Symbol.iterator]` method so that you don't have to!
+For most use-cases you'll want to extend `AbstractIterator` (the iter-over abstract iterator class). This abstract class
+implements such methods as `#forEachRemaining(callback)` and automagically implements the `[Symbol.iterator]` method so
+that you don't have to!
 
 The only methods you have to implement are:
 
@@ -120,7 +130,8 @@ for (let kvPair of iter) console.log(kvPair);
 ```
 
 ### EmptyIterator
-Sometimes it is semantically useful to have an empty iterator that follows the iterator pattern but will never have content.
+Sometimes it is semantically useful to have an empty iterator that follows the iterator pattern but will never have
+content.
 
 ```typescript
 let iter: EmptyIterator = new EmptyIterator();
@@ -129,8 +140,10 @@ console.log(iter.hasNext());
 
 // Prints 'false'.
 ```
+## Documentation
+Full documentation coming soon™!
 
 ## License
 iter-over is made available under the GNU General Public License v3.
 
-Copyright (C) 2019 Trevor Sears
+Copyright (C) 2021 Trevor Sears
