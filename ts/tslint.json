@@ -73,7 +73,7 @@
 		
 		"object-literal-sort-keys": [true, "match-declaration-order"],
 		
-		"only-arrow-functions": false,
+		"only-arrow-functions": [true, "allow-named-functions"],
 		
 		"ordered-imports": false,
 		
@@ -83,7 +83,7 @@
 		
 		"radix": false,
 		
-		"semicolon": [true, "always"],
+		"semicolon": [true, "always", "ignore-bound-class-methods"],
 		
 		"space-within-parens": [false],
 		
@@ -104,21 +104,23 @@
 		],
 		
 		"typedef-whitespace": [true, {
-				"call-signature": "nospace",
-				"index-signature": "nospace",
-				"parameter": "nospace",
-				"property-declaration": "nospace",
-				"variable-declaration": "nospace"
-			}, {
-				"call-signature": "onespace",
-				"index-signature": "onespace",
-				"parameter": "onespace",
-				"property-declaration": "space",
-				"variable-declaration": "onespace"
-			}
+			"call-signature": "nospace",
+			"index-signature": "nospace",
+			"parameter": "nospace",
+			"property-declaration": "nospace",
+			"variable-declaration": "nospace"
+		}, {
+			"call-signature": "onespace",
+			"index-signature": "onespace",
+			"parameter": "onespace",
+			"property-declaration": "space",
+			"variable-declaration": "onespace"
+		}
 		],
 		
 		"typeof-compare": true,
+		
+		"unified-signatures": false,
 		
 		"use-isnan": true,
 		
