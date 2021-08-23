@@ -42,7 +42,7 @@ type ValueOf<T> = T[keyof T];
  * @version v2.0.0
  * @since v0.1.0
  */
-export class ObjectIterator<T extends StringIndexedObject> extends AbstractIterator<KeyValuePair<keyof T, ValueOf<T>>> {
+export class ObjectIterator<T extends StringIndexedObject = any> extends AbstractIterator<KeyValuePair<keyof T, ValueOf<T>>> {
 	
 	/**
 	 * The content (object) that this ObjectIterator is iterating over.
