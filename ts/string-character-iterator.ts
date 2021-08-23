@@ -34,9 +34,10 @@ export class StringCharacterIterator extends AbstractIterator<string> {
 		
 	}
 	
-	public next(): string {
+	public next(): string | undefined {
 		
-		return this.content.substring(this.index, ++this.index);
+		if (this.hasNext()) return this.content.substring(this.index, ++this.index);
+		else return undefined;
 		
 	}
 	
