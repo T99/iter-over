@@ -16,34 +16,37 @@ export interface IIterator<E> {
 	/**
 	 * Returns true if a call to #next() would return a meaningful result after calling this method.
 	 *
-	 * @returns true if a call to #next() would return a meaningful result.
+	 * @returns {boolean} true if a call to #next() would return a meaningful result.
 	 */
 	hasNext(): boolean;
 	
 	/**
 	 * Returns the next element this IIterator has to iterate over.
 	 *
-	 * @returns The next element this IIterator has.
+	 * @returns {E | undefined} The next element this IIterator has.
 	 */
 	next(): E | undefined;
 	
 	/**
 	 * Performs the specified action for all of the remaining elements in this IIterator.
 	 *
-	 * @param callback The action to perform on the remaining elements of this IIterator.
+	 * @param {(element: E) => void} callback The action to perform on the remaining elements of this IIterator.
 	 */
 	forEachRemaining(callback: (element: E) => void): void;
 	
 	/**
 	 * Removes and returns the last element returned by the #next() method from the underlying data structure.
 	 *
-	 * @returns The last element returned by the #next() method.
+	 * @returns {E | undefined} The last element returned by the #next() method.
 	 */
 	remove?(): E | undefined;
 	
 	/**
 	 * Resets this IIterator back to it's initial position, readying it to iterate over the underlying collection from
 	 * the 'beginning' again.
+	 * 
+	 * Note that this does not/should not modify the underlying data structure, meaning that any modifications will not
+	 * be/should not be 'undone' by calling this method.
 	 */
 	reset?(): void;
 	
