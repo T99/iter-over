@@ -13,6 +13,7 @@
  */
 
 export { AbstractIterator } from "./abstract-iterator";
+export { AsyncIterator } from "./async-iterator";
 export { EmptyIterator } from "./empty-iterator";
 export { IIterator } from "./i-iterator";
 export { ObjectIterator, KeyValuePair } from "./object-iterator";
