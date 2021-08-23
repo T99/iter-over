@@ -1,6 +1,6 @@
 # iter-over
 iter-over is an iteration toolset for JavaScript/TypeScript that provides interfaces as well as utility classes for
-iteration using the native JavaScript `Symbol.iterator` method.
+iteration using the native JavaScript `Symbol.iterator` method (and `Symbol.asyncIterator`!).
 
 ### [Find iter-over on NPM.](https://www.npmjs.com/package/iter-over)
 
@@ -68,85 +68,8 @@ for (let counterVal of counter) console.log(counterVal);
 // ...console logs 0 through 9.
 ```
 
-## Utility Classes
-There are a handful of utility classes provided with iter-over that are all ready for you to use.
-
-### StringCharacterIterator
-StringCharacterIterator iterates over the characters of a provided input string.
-
-```typescript
-let iter: StringCharacterIterator = new StringCharacterIterator("Hello!");
-
-for (let character of iter) console.log(character);
-
-// Prints 'H', 'e', 'l', 'l', 'o', '!'.
-```
-
-### StringLineIterator
-StringLineIterator iterates over the lines of a provided input string.
-
-```typescript
-let iter: StringLineIterator = new StringLineIterator(`Hello
-there,
-world!`);
-
-for (let line of iter) console.log(line);
-
-// Prints 'Hello', 'there,', 'world!'.
-```
-
-### ObjectIterator
-ObjectIterator iterates over the key-value pairs of a provided input object, returning IOKeyValuePairs from `#next()`.
-
-```typescript
-let iter: ObjectIterator = new ObjectIterator({
-	key1: "value 1",
-	key2: 2,
-	key3: false,
-	key4: {
-		innerKey: "innerVal"
-	}
-});
-
-for (let kvPair of iter) console.log(kvPair);
-
-// Prints...
-//	'{ key: "key1", value: "value 1" }',
-//	'{ key: "key2", value: 2 }',
-//	'{ key: "key3", value: false }',
-//	'{ key: "key4", value: { innerKey: "innerVal" } }'
-```
-
-If you have more strictly-typed objects you can also pass a type to ObjectIterator.
-
-```typescript
-let iter: ObjectIterator<number> = new ObjectIterator<number>({
-	key1: 0,
-	key2: 11,
-	key3: 42
-});
-
-for (let kvPair of iter) console.log(kvPair);
-
-// Prints...
-//	'{ key: "key1", value: 0 }',
-//	'{ key: "key2", value: 11 }',
-//	'{ key: "key3", value: 42 }'
-```
-
-### EmptyIterator
-Sometimes it is semantically useful to have an empty iterator that follows the iterator pattern but will never have
-content.
-
-```typescript
-let iter: EmptyIterator = new EmptyIterator();
-
-console.log(iter.hasNext());
-
-// Prints 'false'.
-```
 ## Documentation
-Full documentation coming soon™!
+Full documentation can be found [here](https://t99.github.io/iter-over/)!
 
 ## License
 iter-over is made available under the GNU General Public License v3.
