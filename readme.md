@@ -4,7 +4,7 @@
 	iteration using the native JavaScript <code>Symbol.iterator</code> method (and <code>Symbol.asyncIterator</code>!).
 </p>
 
-### [Find iter-over on NPM.](https://www.npmjs.com/package/iter-over)
+<h3 align="center"><a href="https://www.npmjs.com/package/iter-over">Find iter-over on NPM.</a></h3>
 
 ## Table of Contents
 
