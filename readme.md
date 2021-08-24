@@ -1,6 +1,8 @@
-# iter-over
-iter-over is an iteration toolset for JavaScript/TypeScript that provides interfaces as well as utility classes for
-iteration using the native JavaScript `Symbol.iterator` method (and `Symbol.asyncIterator`!).
+<h1 align="center">iter-over</h1>
+<p align="center">
+	iter-over is an iteration toolset for JavaScript/TypeScript that provides interfaces as well as utility classes for
+	iteration using the native JavaScript <code>Symbol.iterator</code> method (and <code>Symbol.asyncIterator</code>!).
+</p>
 
 ### [Find iter-over on NPM.](https://www.npmjs.com/package/iter-over)
 
