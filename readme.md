@@ -1,4 +1,4 @@
-<h1 align="center">iter-over</h1>
+<h1 align="center"><code>iter-over</code></h1>
 <p align="center">
 	iter-over is an iteration toolset for JavaScript/TypeScript that provides interfaces as well as utility classes for
 	iteration using the native JavaScript <code>Symbol.iterator</code> method (and <code>Symbol.asyncIterator</code>!).
