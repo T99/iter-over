@@ -14,9 +14,9 @@
 export interface IIterator<E> {
 	
 	/**
-	 * Returns true if a call to #next() would return a meaningful result after calling this method.
+	 * Returns true if this iterator has at least one more element that can be returned from {@link #next}.
 	 *
-	 * @returns {boolean} true if a call to #next() would return a meaningful result.
+	 * @returns {boolean} true if this iterator has at least one more element that can be returned from {@link #next}.
 	 */
 	hasNext(): boolean;
 	
@@ -54,15 +54,15 @@ export interface IIterator<E> {
 	 * Returns an instance of an IterableIterator that allows 'this' to be iterable using the baked-in 'for...of'
 	 * syntax, rather than more verbose iteration (i.e. using a 'while' loop).
 	 * 
-	 * @return An instance of an IterableIterator.
+	 * @return {IterableIterator<E>} An instance of an IterableIterator.
 	 */
 	[Symbol.iterator](): IterableIterator<E>;
 	
 	/**
 	 * This method is simply an ease-of-understanding alias method for the [Symbol.iterator] method.
 	 * 
-	 * @return An instance of an IterableIterator.
-	 * @see IIterator#[Symbol.iterator]
+	 * @return {IterableIterator<E>} An instance of an IterableIterator.
+	 * @see #[Symbol.iterator]
 	 */
 	getIterableIterator(): IterableIterator<E>;
 	

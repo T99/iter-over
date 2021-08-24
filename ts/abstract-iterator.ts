@@ -16,9 +16,9 @@ import { IIterator } from "./i-iterator";
 export abstract class AbstractIterator<E> implements IIterator<E> {
 	
 	/**
-	 * Returns true if a call to #next() would return a meaningful result after calling this method.
+	 * Returns true if this iterator has at least one more element that can be returned from {@link #next}.
 	 *
-	 * @returns {boolean} true if a call to #next() would return a meaningful result.
+	 * @returns {boolean} true if this iterator has at least one more element that can be returned from {@link #next}.
 	 */
 	public abstract hasNext(): boolean;
 	

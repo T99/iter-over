@@ -40,9 +40,10 @@ export class ArrayIterator<E> extends AbstractIterator<E> {
 	}
 	
 	/**
-	 * Returns true if this ArrayIterator has more element to return from {@link ArrayIterator#next}.
+	 * Returns true if this ArrayIterator has at least one more element that can be returned from {@link #next}.
 	 *
-	 * @return {boolean} true if this ArrayIterator has more element to return from ArrayIterator#next.
+	 * @returns {boolean} true if this ArrayIterator has at least one more element that can be returned from
+	 * {@link #next}.
 	 */
 	public hasNext(): boolean {
 		
