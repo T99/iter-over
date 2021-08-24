@@ -8,11 +8,6 @@ iteration using the native JavaScript `Symbol.iterator` method (and `Symbol.asyn
 
 - [Installation](#installation)
 - [Basic Usage](#basic-usage)
-- [Utility Classes](#utility-classes)
-  - [`StringCharacterIterator`](#stringcharacteriterator)
-  - [`StringLineIterator`](#stringlineiterator)
-  - [`ObjectIterator`](#objectiterator)
-  - [`EmptyIterator`](#emptyiterator)
 - [Documentation](#documentation)
 - [License](#license)
 
