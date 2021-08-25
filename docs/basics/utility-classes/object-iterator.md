@@ -1,5 +1,9 @@
 # The Basics/Utility Classes/`ObjectIterator`
 
+!!! help "Reference Documentation"
+    Find reference documentation for `ObjectIterator` [here](/iter-over/reference/utility-classes/object-iterator/), or
+    navigate to it via the ['Reference'](/iter-over/reference/) tab.
+
 How many times have you typed out the classic `for (let prop of Object.keys(myObj)) ...` mantra? More than three times?
 Yeah, me too. Here's an easy way to loop over the key-value pairs present in an object:
 

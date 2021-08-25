@@ -1,5 +1,9 @@
 # Reference/Utility Classes/`EmptyIterator`
 
+!!! help "How-To/Usage Guide"
+    Find a how-to/usage guide for the `EmptyIterator` [here](/iter-over/basics/utility-classes/empty-iterator/) class,
+    or navigate to it via the ['The Basics'](/iter-over/basics/) tab.
+
 An empty iterator.
 
 ---

@@ -81,8 +81,14 @@ nav:
     - Overview: index.md
   - The Basics:
     - Overview: basics/index.md
+    - Guides:
+      - Creating a Color Iterator: basics/guides/creating-a-color-iterator.md
+      - Iterating Over Promises: basics/guides/iterating-over-promises.md
+      - Advanced Iterator Capabilities: basics/guides/advanced-iterator-capabilities.md
     - Utility Classes:
       - Overview: basics/utility-classes/index.md
+      - ArrayIterator: basics/utility-classes/array-iterator.md
+      - AsyncIterator: basics/utility-classes/async-iterator.md
       - EmptyIterator: basics/utility-classes/empty-iterator.md
       - ObjectIterator: basics/utility-classes/object-iterator.md
       - StringCharacterIterator: basics/utility-classes/string-character-iterator.md
@@ -93,6 +99,8 @@ nav:
       - IIterator: reference/core/i-iterator.md
       - AbstractIterator: reference/core/abstract-iterator.md
     - Utility Classes:
+      - ArrayIterator: reference/utility-classes/array-iterator.md
+      - AsyncIterator: reference/utility-classes/async-iterator.md
       - EmptyIterator: reference/utility-classes/empty-iterator.md
       - ObjectIterator: reference/utility-classes/object-iterator.md
       - StringCharacterIterator: reference/utility-classes/string-character-iterator.md

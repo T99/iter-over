@@ -82,10 +82,10 @@ hasNext(): boolean
 **Description** <br />
 Returns the next element this `IIterator` has to iterate over.
 
-**Returns** [`#!typescript E | undefined`] The next element this `IIterator` has.
+**Returns** [`#!typescript E`] The next element this `IIterator` has.
 
 ```typescript
-next(): E | undefined
+next(): E
 ```
 
 ---

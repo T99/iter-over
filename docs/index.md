@@ -12,9 +12,9 @@ Welcome to the `iter-over` documentation.
 Just looking to get started with `iter-over` and want a step-by-step walkthrough? Check out the various available
 tutorials located under [The Basics](/iter-over/basics/), including:
 
- - [Creating a Color Iterator](/iter-over/basics/creating-a-color-iterator/)
- - [Iterating Over Promises](/iter-over/basics/iterating-over-promises/)
- - [Advanced Iterator Capabilities](/iter-over/basics/advanced-iterator-capabilities/)
+ - [Creating a Color Iterator](/iter-over/basics/guides/creating-a-color-iterator/)
+ - [Iterating Over Promises](/iter-over/basics/guides/iterating-over-promises/)
+ - [Advanced Iterator Capabilities](/iter-over/basics/guides/advanced-iterator-capabilities/)
 
 ## Reference Material
 

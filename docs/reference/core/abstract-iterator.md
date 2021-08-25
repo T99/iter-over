@@ -83,11 +83,11 @@ public abstract hasNext(): boolean
 **Description** <br />
 Returns the next element this `AbstractIterator` has to iterate over.
 
-**Returns** [`#!typescript E | undefined`] The next element this `AbstractIterator` has. <br />
+**Returns** [`#!typescript E`] The next element this `AbstractIterator` has. <br />
 **Implements** [`IIterator#next`](/iter-over/reference/core/i-iterator/#next)
 
 ```typescript
-public abstract next(): E | undefined
+public abstract next(): E
 ```
 
 ---

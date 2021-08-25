@@ -1,5 +1,10 @@
 # Reference/Utility Classes/`StringCharacterIterator`
 
+!!! help "How-To/Usage Guide"
+    Find a how-to/usage guide for the `StringCharacterIterator`
+    [here](/iter-over/basics/utility-classes/string-character-iterator/) class, or navigate to it via the
+    ['The Basics'](/iter-over/basics/) tab.
+
 An iterator that iterates over the characters in a string.
 
 ## Class Signature
