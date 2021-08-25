@@ -7,7 +7,7 @@
 import { AbstractIterator } from "./abstract-iterator";
 
 /**
- * An AbstractIterator that iterates over the characters in a string.
+ * An iterator that iterates over the characters in a string.
  *
  * @author Trevor Sears <trevorsears.main@gmail.com>
  * @version v1.0.0
@@ -34,9 +34,10 @@ export class StringCharacterIterator extends AbstractIterator<string> {
 		
 	}
 	
-	public next(): string {
+	public next(): string | undefined {
 		
-		return this.content.substring(this.index, ++this.index);
+		if (this.hasNext()) return this.content.substring(this.index, ++this.index);
+		else return undefined;
 		
 	}
 	

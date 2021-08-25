@@ -28,7 +28,7 @@ export class ArrayIterator<E> extends AbstractIterator<E> {
 	/**
 	 * Initializes a new ArrayIterator with the provided array.
 	 *
-	 * @param array The array over which the newly initialized ArrayIterator should iterate.
+	 * @param {E[]} array The array over which the newly initialized ArrayIterator should iterate.
 	 */
 	public constructor(array: E[]) {
 	
@@ -40,9 +40,10 @@ export class ArrayIterator<E> extends AbstractIterator<E> {
 	}
 	
 	/**
-	 * Returns true if this ArrayIterator has more element to return from {@link ArrayIterator#next}.
+	 * Returns true if this ArrayIterator has at least one more element that can be returned from {@link #next}.
 	 *
-	 * @return true if this ArrayIterator has more element to return from ArrayIterator#next.
+	 * @returns {boolean} true if this ArrayIterator has at least one more element that can be returned from
+	 * {@link #next}.
 	 */
 	public hasNext(): boolean {
 		
@@ -53,7 +54,8 @@ export class ArrayIterator<E> extends AbstractIterator<E> {
 	/**
 	 * Returns the next element of the underlying array, or undefined if there are no more elements to consume.
 	 *
-	 * @return The next element of the underlying array, or undefined if there are no more elements to consume.
+	 * @return {E | undefined} The next element of the underlying array, or undefined if there are no more elements to
+	 * consume.
 	 */
 	public next(): E | undefined {
 		
@@ -65,9 +67,11 @@ export class ArrayIterator<E> extends AbstractIterator<E> {
 	/**
 	 * Removes and returns the last element returned by the #next() method from the underlying array.
 	 *
-	 * @returns The last element returned by the #next() method.
+	 * @returns {E | undefined} The last element returned by the #next() method.
 	 */
 	public remove(): E | undefined {
+		
+		// TODO [8/23/2021 @ 2:32 PM] This isn't actually removing the underlying element from the array!
 		
 		if ((this.cursor > 0) && (this.hasNext())) return this.iterationArray[--this.cursor];
 		else return undefined;

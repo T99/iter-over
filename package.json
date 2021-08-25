@@ -14,23 +14,32 @@
   },
   "keywords": [
     "iteration",
-    "iter",
-    "iterable",
     "iterator",
+    "iterators",
+    "iterable",
+    "iterables",
+    "async-iterator",
+    "async-iteration",
+    "async-iterable",
+    "iter",
     "iterate",
     "for in",
     "for-in",
     "for of",
     "for-of",
     "for each",
-    "for-each"
+    "for-each",
+    "for await",
+    "for-await",
+    "Symbol.iterator",
+    "Symbol.asyncIterator"
   ],
-  "author": "Trevor Sears <trevorsears.main@gmail.com> (https://trevorsears.io/)",
+  "author": "Trevor Sears <trevor@trevorsears.com> (https://trevorsears.com/)",
   "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/T99/iter-over/issues"
   },
-  "homepage": "https://github.com/T99/iter-over#readme",
+  "homepage": "https://t99.github.io/iter-over/",
   "devDependencies": {
     "typescript": "latest",
     "tslint": "latest",

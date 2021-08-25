@@ -16,23 +16,23 @@ import { IIterator } from "./i-iterator";
 export abstract class AbstractIterator<E> implements IIterator<E> {
 	
 	/**
-	 * Returns true if a call to #next() would return a meaningful result after calling this method.
+	 * Returns true if this iterator has at least one more element that can be returned from {@link #next}.
 	 *
-	 * @returns true if a call to #next() would return a meaningful result.
+	 * @returns {boolean} true if this iterator has at least one more element that can be returned from {@link #next}.
 	 */
 	public abstract hasNext(): boolean;
 	
 	/**
 	 * Returns the next element this AbstractIterator has to iterate over.
 	 *
-	 * @returns The next element this AbstractIterator has.
+	 * @returns {E | undefined} The next element this AbstractIterator has.
 	 */
 	public abstract next(): E | undefined;
 	
 	/**
 	 * Performs the specified action for all of the remaining elements in this AbstractIterator.
 	 *
-	 * @param callback The action to perform on the remaining elements of this AbstractIterator.
+	 * @param {(element: E) => void} callback The action to perform on the remaining elements of this AbstractIterator.
 	 */
 	public forEachRemaining(callback: (element: E) => void): void {
 		
@@ -43,7 +43,7 @@ export abstract class AbstractIterator<E> implements IIterator<E> {
 	/**
 	 * Removes and returns the last element returned by the #next() method from the underlying data structure.
 	 *
-	 * @returns The last element returned by the #next() method.
+	 * @returns {E | undefined} The last element returned by the #next() method.
 	 */
 	public remove(): E | undefined {
 		

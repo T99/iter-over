@@ -42,7 +42,7 @@ type ValueOf<T> = T[keyof T];
  * @version v2.0.0
  * @since v0.1.0
  */
-export class ObjectIterator<T extends StringIndexedObject> extends AbstractIterator<KeyValuePair<keyof T, ValueOf<T>>> {
+export class ObjectIterator<T extends StringIndexedObject = any> extends AbstractIterator<KeyValuePair<keyof T, ValueOf<T>>> {
 	
 	/**
 	 * The content (object) that this ObjectIterator is iterating over.
@@ -79,9 +79,9 @@ export class ObjectIterator<T extends StringIndexedObject> extends AbstractItera
 	}
 	
 	/**
-	 * Returns true if a call to #next() would return a meaningful result after calling this method.
+	 * Returns true if this iterator has at least one more element that can be returned from {@link #next}.
 	 *
-	 * @returns {boolean} true if a call to #next() would return a meaningful result.
+	 * @returns {boolean} true if this iterator has at least one more element that can be returned from {@link #next}.
 	 */
 	public hasNext(): boolean {
 		

@@ -10,24 +10,24 @@ import { AbstractIterator } from "./abstract-iterator";
  * An empty iterator.
  *
  * @author Trevor Sears <trevorsears.main@gmail.com>
- * @version v1.0.0
+ * @version v2.0.0
  * @since v0.1.0
  */
-export class EmptyIterator extends AbstractIterator<any> {
+export class EmptyIterator extends AbstractIterator<undefined> {
 	
-	public hasNext(): boolean {
+	public hasNext(): false {
 		
 		return false;
 		
 	}
 	
-	public next(): any {
+	public next(): undefined {
 		
 		return undefined;
 		
 	}
 	
-	public remove(): any {
+	public remove(): undefined {
 		
 		return undefined;
 		
