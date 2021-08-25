@@ -30,7 +30,9 @@ export class StringLineIterator extends AbstractIterator<string> {
 		this.content = content;
 		this.lineBreakCharacter = StringLineIterator.determineLineBreakStyle(this.content);
 		this.substringStartIndex = 0;
-		this.substringEndIndex = 0;
+		this.substringEndIndex = -this.lineBreakCharacter.length;
+		
+		this.findNextLineBreak();
 		
 	}
 	
@@ -71,22 +73,45 @@ export class StringLineIterator extends AbstractIterator<string> {
 	}
 	
 	protected findNextLineBreak(): void {
-	
-	
-	
+		
+		let indexOfNextLineBreak: number = this.content.indexOf(this.lineBreakCharacter, this.substringEndIndex + 1);
+		
+		if (indexOfNextLineBreak !== -1) {
+			
+			this.substringStartIndex = this.substringEndIndex + this.lineBreakCharacter.length;
+			this.substringEndIndex = indexOfNextLineBreak;
+			
+		} else if (this.content.length > this.substringEndIndex) {
+			
+			this.substringStartIndex = this.substringEndIndex + this.lineBreakCharacter.length;
+			this.substringEndIndex = this.content.length;
+			
+		} else {
+			
+			this.substringStartIndex = this.content.length;
+			this.substringEndIndex = this.content.length;
+			
+		} 
+		
 	}
 	
 	public hasNext(): boolean {
 		
-		return (this.index < this.content.length);
+		return (this.substringEndIndex > this.substringStartIndex);
 		
 	}
 	
-	public next(): string {
+	public next(): string | undefined {
 		
-		let substring: string = this.content[this.index++];
-		
-		return substring.trim();
+		if (this.hasNext()) {
+			
+			let line: string = this.content.substring(this.substringStartIndex, this.substringEndIndex).trim();
+			
+			this.findNextLineBreak();
+			
+			return line;
+			
+		} else return undefined;
 		
 	}
 	
@@ -98,7 +123,17 @@ export class StringLineIterator extends AbstractIterator<string> {
 	
 	public reset(): void {
 		
-		this.index = 0;
+		this.substringStartIndex = 0;
+		this.substringEndIndex = -this.lineBreakCharacter.length;
+		
+		this.findNextLineBreak();
+		
+	}
+	
+	public toString(lineBreak: string = this.lineBreakCharacter): string {
+		
+		if (lineBreak === this.lineBreakCharacter) return this.content;
+		else return this.content.split(this.lineBreakCharacter).join(lineBreak);
 		
 	}
 	
