@@ -33,6 +33,7 @@
   "homepage": "https://github.com/T99/iter-over#readme",
   "devDependencies": {
     "typescript": "latest",
+    "ts-node": "latest",
     "tslint": "latest",
     "@types/jest": "latest",
     "del": "latest",
