@@ -76,11 +76,11 @@ string content`;
 	
 	test("Expect correct string to be received.", () => {
 		
-		let result: string[] = [];
+		expect(iterator.next()).toBe("This is");
 		
-		iterator.forEachRemaining((value: string) => result.push(value));
+		expect(iterator.next()).toBe("my multiline");
 		
-		expect(result.join("\n")).toBe(content);
+		expect(iterator.next()).toBe("string content");
 		
 	});
 	
