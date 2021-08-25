@@ -4,7 +4,7 @@
  *	Project: iter-over
  */
 
-import { ObjectIterator } from "../object-iterator";
+import { ObjectIterator } from "../utility/object-iterator";
 
 describe("Basic Object Iteration", () => {
 	

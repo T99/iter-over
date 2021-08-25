@@ -4,7 +4,7 @@
  *	Website: iter-over
  */
 
-import { StringLineIterator } from "../string-line-iterator";
+import { StringLineIterator } from "../utility/string-line-iterator";
 
 /**
  *

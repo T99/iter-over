@@ -4,7 +4,7 @@
  *	Project: iter-over
  */
 
-import { AbstractIterator } from "../abstract-iterator";
+import { AbstractIterator } from "../core/abstract-iterator";
 
 let iterator: AbstractIterator<any>;
 

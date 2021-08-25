@@ -4,7 +4,7 @@
  *	Project: iter-over
  */
 
-import { AbstractIterator } from "./abstract-iterator";
+import { AbstractIterator } from "../core/abstract-iterator";
 
 type StringIndexedObject = {
 	[property: string]: any

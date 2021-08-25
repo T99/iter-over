@@ -4,7 +4,7 @@
  *	Website: iter-over
  */
 
-import { EmptyIterator } from "../empty-iterator";
+import { EmptyIterator } from "../utility/empty-iterator";
 
 /**
  *

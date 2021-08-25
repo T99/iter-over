@@ -23,9 +23,9 @@ export interface IIterator<E> {
 	/**
 	 * Returns the next element this IIterator has to iterate over.
 	 *
-	 * @returns {E | undefined} The next element this IIterator has.
+	 * @returns {E} The next element this IIterator has.
 	 */
-	next(): E | undefined;
+	next(): E;
 	
 	/**
 	 * Performs the specified action for all of the remaining elements in this IIterator.

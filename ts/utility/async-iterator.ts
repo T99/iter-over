@@ -1,4 +1,4 @@
-import { AbstractIterator } from "./abstract-iterator";
+import { AbstractIterator } from "../core/abstract-iterator";
 
 type ExternallyResolveablePromise<T, R = any> = {
 	promise: Promise<T>;

@@ -4,7 +4,7 @@
  *	Project: iter-over
  */
 
-import { AbstractIterator } from "./abstract-iterator";
+import { AbstractIterator } from "../core/abstract-iterator";
 
 /**
  * A utility class for getting a full iter-over iteration context from an otherwise primitive array.

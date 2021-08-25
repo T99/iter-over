@@ -4,7 +4,7 @@
  *	Project: iter-over
  */
 
-import { ArrayIterator } from "../array-iterator";
+import { ArrayIterator } from "../utility/array-iterator";
 
 /**
  * Test cases for the {@link ArrayIterator} class.

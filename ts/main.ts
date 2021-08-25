@@ -12,11 +12,11 @@
  * @since v0.1.0
  */
 
-export { AbstractIterator } from "./abstract-iterator";
-export { AsyncIterator } from "./async-iterator";
-export { EmptyIterator } from "./empty-iterator";
-export { IIterator } from "./i-iterator";
-export { ObjectIterator, KeyValuePair } from "./object-iterator";
-export { ArrayIterator } from "./array-iterator";
-export { StringCharacterIterator } from "./string-character-iterator";
-export { StringLineIterator } from "./string-line-iterator";
+export { AbstractIterator } from "./core/abstract-iterator";
+export { AsyncIterator } from "./utility/async-iterator";
+export { EmptyIterator } from "./utility/empty-iterator";
+export { IIterator } from "./core/i-iterator";
+export { ObjectIterator, KeyValuePair } from "./utility/object-iterator";
+export { ArrayIterator } from "./utility/array-iterator";
+export { StringCharacterIterator } from "./utility/string-character-iterator";
+export { StringLineIterator } from "./utility/string-line-iterator";
