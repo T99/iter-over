@@ -13,7 +13,7 @@ import { AbstractIterator } from "../core/abstract-iterator";
  * @version v1.5.0
  * @since v0.1.0
  */
-export class ArrayIterator<E> extends AbstractIterator<E> {
+export class ArrayIterator<E> extends AbstractIterator<E | undefined> {
 	
 	/**
 	 * The array over which this object is iterating.

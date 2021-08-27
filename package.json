@@ -1,6 +1,6 @@
 {
   "name": "iter-over",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Sugary iteration utilities and interfaces.",
   "main": "js/main",
   "types": ".d.ts/main",

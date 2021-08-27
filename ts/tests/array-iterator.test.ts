@@ -139,7 +139,7 @@ describe("Per-method tests.", (): void => {
 			
 			let resultSet: number[] = [];
 			
-			populatedIterator.forEachRemaining((element: number) => resultSet.push(element));
+			populatedIterator.forEachRemaining((element: number | undefined) => resultSet.push(element as number));
 			
 			expect(resultSet).toStrictEqual(iteratorArray);
 			

@@ -13,7 +13,7 @@ import { AbstractIterator } from "../core/abstract-iterator";
  * @version v1.2.0
  * @since v1.2.0
  */
-export class StringLineIterator extends AbstractIterator<string> {
+export class StringLineIterator extends AbstractIterator<string | undefined> {
 	
 	private content: string;
 	

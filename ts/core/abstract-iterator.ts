@@ -27,7 +27,7 @@ export abstract class AbstractIterator<E> implements IIterator<E> {
 	 *
 	 * @returns {E | undefined} The next element this AbstractIterator has.
 	 */
-	public abstract next(): E | undefined;
+	public abstract next(): E;
 	
 	/**
 	 * Performs the specified action for all of the remaining elements in this AbstractIterator.
