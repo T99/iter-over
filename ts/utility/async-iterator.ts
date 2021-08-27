@@ -6,7 +6,14 @@ type ExternallyResolveablePromise<T, R = any> = {
 	reject: (value: R) => void;
 };
 
-export class AsyncIterator<T> extends AbstractIterator<Promise<T | undefined>> {
+/**
+ * A utility class for asynchronously iterating over a collection of Promises as they resolve.
+ *
+ * @author Trevor Sears <trevorsears.main@gmail.com>
+ * @version v2.1.0
+ * @since v0.1.0
+ */
+export class AsyncIterator<T> extends AbstractIterator<Promise<T | undefined>, void> {
 	
 	private promiseIndex: number = 0;
 	

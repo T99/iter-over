@@ -10,10 +10,10 @@ import { AbstractIterator } from "../core/abstract-iterator";
  * An iterator that iterates over the characters in a string.
  *
  * @author Trevor Sears <trevorsears.main@gmail.com>
- * @version v1.0.0
+ * @version v2.1.0
  * @since v0.1.0
  */
-export class StringCharacterIterator extends AbstractIterator<string | undefined> {
+export class StringCharacterIterator extends AbstractIterator<string> {
 	
 	private content: string;
 	

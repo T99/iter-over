@@ -10,10 +10,10 @@ import { AbstractIterator } from "../core/abstract-iterator";
  * An iterator that iterates over the lines in a string.
  *
  * @author Trevor Sears <trevorsears.main@gmail.com>
- * @version v1.2.0
+ * @version v2.1.0
  * @since v1.2.0
  */
-export class StringLineIterator extends AbstractIterator<string | undefined> {
+export class StringLineIterator extends AbstractIterator<string> {
 	
 	private content: string;
 	

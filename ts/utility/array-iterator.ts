@@ -10,15 +10,15 @@ import { AbstractIterator } from "../core/abstract-iterator";
  * A utility class for getting a full iter-over iteration context from an otherwise primitive array.
  *
  * @author Trevor Sears <trevorsears.main@gmail.com>
- * @version v1.5.0
+ * @version v2.1.0
  * @since v0.1.0
  */
-export class ArrayIterator<E> extends AbstractIterator<E | undefined> {
+export class ArrayIterator<T> extends AbstractIterator<T> {
 	
 	/**
 	 * The array over which this object is iterating.
 	 */
-	private iterationArray: E[];
+	private iterationArray: T[];
 	
 	/**
 	 * The index of the next element that should be returned from {@link ArrayIterator#next}.
@@ -28,9 +28,9 @@ export class ArrayIterator<E> extends AbstractIterator<E | undefined> {
 	/**
 	 * Initializes a new ArrayIterator with the provided array.
 	 *
-	 * @param {E[]} array The array over which the newly initialized ArrayIterator should iterate.
+	 * @param {T[]} array The array over which the newly initialized ArrayIterator should iterate.
 	 */
-	public constructor(array: E[]) {
+	public constructor(array: T[]) {
 	
 		super();
 		
@@ -54,10 +54,10 @@ export class ArrayIterator<E> extends AbstractIterator<E | undefined> {
 	/**
 	 * Returns the next element of the underlying array, or undefined if there are no more elements to consume.
 	 *
-	 * @return {E | undefined} The next element of the underlying array, or undefined if there are no more elements to
+	 * @return {T | undefined} The next element of the underlying array, or undefined if there are no more elements to
 	 * consume.
 	 */
-	public next(): E | undefined {
+	public next(): T | undefined {
 		
 		if (this.hasNext()) return this.iterationArray[this.cursor++];
 		else return undefined;
@@ -65,11 +65,11 @@ export class ArrayIterator<E> extends AbstractIterator<E | undefined> {
 	}
 	
 	/**
-	 * Removes and returns the last element returned by the #next() method from the underlying array.
+	 * Removes and returns the last element returned by the {@link #next} method from the underlying array.
 	 *
-	 * @returns {E | undefined} The last element returned by the #next() method.
+	 * @returns {T | undefined} The last element returned by the {@link #next} method.
 	 */
-	public remove(): E | undefined {
+	public remove(): T | undefined {
 		
 		// TODO [8/23/2021 @ 2:32 PM] This isn't actually removing the underlying element from the array!
 		
