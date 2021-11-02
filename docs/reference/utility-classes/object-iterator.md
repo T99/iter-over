@@ -1,10 +1,12 @@
 # Reference/Utility Classes/`ObjectIterator`
 
+An iterator that iterates over the keys of an object.
+
 !!! help "How-To/Usage Guide"
     Find a how-to/usage guide for the `ObjectIterator` [here](/iter-over/basics/utility-classes/object-iterator/) class,
     or navigate to it via the ['The Basics'](/iter-over/basics/) tab.
 
-An iterator that iterates over the keys of an object.
+---
 
 ## Class Signature
 
